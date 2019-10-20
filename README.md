@@ -10,12 +10,23 @@ Responsive app that catalogues CRUD clothing items and allows you to CRUD outfit
 
 ## Wireframes
 
-Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
+https://www.figma.com/file/BQLbVHUzP7E7Whu0gC0SMd/Wireframing-Copy?node-id=89364%3A480.
 
 ## API Snippet
 
 ```
-Paste a snippet from your API here that shows the shape of the data
+Clothing tables (Shirt, pants, shoes, etc..):
+- Clothing_id (PK)
+- Name
+- Type
+- Brand
+- Color 
+- Fabric
+
+Outfit table:
+- Outfit_id (PK)
+- Name
+- Clothing_id (FK)
 ```
 
 ### MVP/PostMVP - 5min
@@ -30,19 +41,20 @@ MVP:
 
 #### PostMVP EXAMPLE
 
-- Add user auth
+- Random Outfit from list button
+- Random Outfit Creator
 
 ## ERD Diagram
 
-- A diagram of your tables and how they relate to each other
+- https://res.cloudinary.com/dz6rzbi7d/image/upload/v1571455417/Project3/IMG_1799_quu72q.heic
 
 ## React Component Hierarchy
 
-Define the the React components and the architectural design of your app.
+https://res.cloudinary.com/dz6rzbi7d/image/upload/v1571455471/Project3/IMG_1800_vvyapp.heic
 
 ## Priority Matrix
 
-Add in a picture of your Priority Matrix
+https://res.cloudinary.com/dsnhxcw0e/image/upload/v1571612261/Screen_Shot_2019-10-19_at_4.58.54_PM_vcddxf.heic
 
 ## Functional Components
 ##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
@@ -52,20 +64,38 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | Component | Description | 
 | --- | :---: |  
 | Header | This will render the header include the nav | 
-| Footer | This will render the footer include the nav | 
+| Footer | This will render the footer  | 
+| App | This will hold the Header, Main, and Footer. Router will wrap Header and Main here. - will hold state |
+| Main | This will hold the rest of the components |
+| ClothingList | Hold list of all clothing items |
+| OutfitList | Hold list of all outfits |
+| CreateClothing | Where the user will be able to create new items and add them to the clothing tables |
+| CreatOutfit | Where the user will be able to create outfits and add them to the outfit table |
+| ClothingContainer | Where the clothing information will render |
+| OutfitContainer | Where the outfit information will render |
+| NotFound | Redirect if user |
 
 
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
 
-| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
+| Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
-
+| Project Design | H | 3hrs| 4hrs | :---: |
+| Pseudocode | M | 3hrs| :---: | :---: |
+| Create DB (models, migration, seed) | H | 3hrs | :---: | :---: |
+| Create rest of backend including routes | H | 3hrs| :---: | :---: |
+| REACT structure | H | 6hrs| :---: | :---: |
+| JSX logic and routing | H | 6hrs| :---: | :---: |
+| CSS styling | M | 10hrs| 10hrs | 10hrs |
+| Total | H | 34hrs| 35hrs | :---: |
 
 ## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project. 
+- react-router
+- react-router-dom
+- @fortawesome/fontawesome-svg-core
+- @fortawesome/free-brands-svg-icons
+- @fortawesome/free-solid-svg-icons
+
 
 ## Code Snippet
 
