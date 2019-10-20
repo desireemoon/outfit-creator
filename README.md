@@ -6,7 +6,7 @@ outfit-creator
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+Responsive app that catalogues CRUD clothing items and allows you to CRUD outfits.
 
 ## Wireframes
 
@@ -20,13 +20,13 @@ Paste a snippet from your API here that shows the shape of the data
 
 ### MVP/PostMVP - 5min
 
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
-
-#### MVP EXAMPLE
-- Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
-- Save their choices in firebase
+MVP:
+- database container multiple clothing tables (based on category) and outfit table (hold clothing IDs for associations)
+- Show a list of each clothing category 
+- Allow user to CRUD outfits
+- Allow user to CRUD clothing articles
+- be responsive
+- 
 
 #### PostMVP EXAMPLE
 
