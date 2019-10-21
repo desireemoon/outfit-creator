@@ -37,7 +37,6 @@ MVP:
 - Allow user to CRUD outfits
 - Allow user to CRUD clothing articles
 - be responsive
-- 
 
 #### PostMVP EXAMPLE
 
