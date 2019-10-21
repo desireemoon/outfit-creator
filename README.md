@@ -91,36 +91,26 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Project Design | H | 3hrs| 4hrs | :---: |
-| Pseudocode | M | 3hrs| :---: | :---: |
+| Project Design | H | 3hrs| 6hrs | :---: |
+| Pseudocode | M | 3hrs| 10hrs | :---: |
 | Create DB (models, migration, seed) | H | 3hrs | :---: | :---: |
 | Create rest of backend including routes | H | 3hrs| :---: | :---: |
 | REACT structure | H | 6hrs| :---: | :---: |
-| JSX logic and routing | H | 6hrs| :---: | :---: |
-| CSS styling | M | 10hrs| 10hrs | 10hrs |
-| Total | H | 34hrs| 35hrs | :---: |
-| Create DB (models, migration, seed) | H | 2hrs| :---: | :---: |
-| Setting up express router | H | 2hrs| :---: | :---: |
-| Create-react-app (set-up skeleton) | H | 1/2hrs | :---: | :---: |
-| Set up routes | H | 1hrs| :---: | :---: |
+| React routing and links | H | 1hrs| :---: | :---: |
 | Build Main | H | 1hrs| :---: | :---: |
 | Build ClothingList/OutfitList | H | 2hrs| :---: | :---: |
+| Build OutfitList | H | 2hrs| :---: | :---: |
 | Build CreateClothing | H | 1hrs| :---: | :---: |
 | Build CreateOutfit | H | 1hrs| :---: | :---: |
 | Build ClothingContainer | H | 2hrs| :---: | :---: |
 | Build OutfitContainer | H | 2hrs| :---: | :---: |
-| Build NotFound/ Footer | H | 1/2hrs| :---: | :---: |
+| Build NotFound/Footer | H | 1/2hrs| :---: | :---: |
 | Build Header/Navbar | H | 2hrs| :---: | :---: |
-| Make successful API calls | H | 2hrs| :---: | :---: |
+| React logic and API calls | H | 6hrs| :---: | :---: |
 | Plan out designs | M | 2hrs| :---: | :---: |
-| Style home page | M | 2hrs| :---: | :---: |
-| Style create outfit page | M | 2hrs| :---: | :---: |
-| Style create clothing page | M | 2hrs| :---: | :---: |
-| Style clothing list, outfit list pages | M | 2hrs| :---: | :---: |
-| Make desktop responsive | M | 2hrs| :---: | :---: |
-| Time spent on Git merge | M | 1hr| :---: | :---: |
+| CSS styling | M | 10hrs| 10hrs | :---: |
 | PMVP: build and style random outfit page | M | 4hrs| :---: | :---: |
-| Total | H | 35hrs| :---: | :---: |
+| Total | H | 34hrs| 35hrs | :---: |
 
 ## Additional Libraries
 - react-router
