@@ -60,11 +60,11 @@ MVP:
 
 ## React Component Hierarchy
 
-https://res.cloudinary.com/dz6rzbi7d/image/upload/v1571455471/Project3/IMG_1800_vvyapp.heic
+- https://res.cloudinary.com/dz6rzbi7d/image/upload/v1571455471/Project3/IMG_1800_vvyapp.heic
 
 ## Priority Matrix
 
-https://res.cloudinary.com/dsnhxcw0e/image/upload/v1571612261/Screen_Shot_2019-10-19_at_4.58.54_PM_vcddxf.heic
+- https://res.cloudinary.com/dsnhxcw0e/image/upload/v1571612261/Screen_Shot_2019-10-19_at_4.58.54_PM_vcddxf.heic
 
 ## Functional Components
 ##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
