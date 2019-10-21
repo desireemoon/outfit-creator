@@ -8,6 +8,16 @@ outfit-creator
 
 Responsive app that catalogues CRUD clothing items and allows you to CRUD outfits.
 
+## Project Schedule
+
+|  Day | Deliverable | Status
+|---|---| ---|
+|Oct 21st| Project Approval - Pseudocode and start Structure and backend | Incomplete
+|Oct 22nd| Finish structure and start Logic  | Incomplete
+|Oct 23rd| Finish logic and start CSS | Incomplete
+|Oct 24th| CSS and any post MVP work | Incomplete
+|Oct 25th| Presentation Day - project finished  | Incomplete
+
 ## Wireframes
 
 https://www.figma.com/file/BQLbVHUzP7E7Whu0gC0SMd/Wireframing-Copy?node-id=89364%3A480.
