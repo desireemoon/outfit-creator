@@ -116,6 +116,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 ## Additional Libraries
 - react-router
+- axios
 - react-router-dom
 - @fortawesome/fontawesome-svg-core
 - @fortawesome/free-brands-svg-icons
@@ -127,8 +128,63 @@ Time frames are also key in the development cycle.  You have limited time to cod
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
+const CatContainer = ({cat}) => {
+    const [flipped, setFlipped] = useState(false)
+    const [name, setName] = useState(cat.name)
+    const [age, setAge] = useState(cat.age)
+    const [breed, setBreed] = useState(cat.breed)
+
+    const changeName = (e) => {
+        setName(e.target.value)
+    }
+    const changeAge = (e) => {
+        setAge(e.target.value)
+    }
+    const changeBreed = (e) => {
+        setBreed(e.target.value)
+    }
+
+    const onClick = (e) => {
+        e.preventDefault()
+        axios.put(`/cats/id/${cat.id}`, {name, age, breed})
+            .then(response => {
+                console.log("response from put:\n", response);
+            }).catch(err => console.log("Error while putting!", err))
+        setFlipped(f => !f)
+    }
+
+    const showCard = () => {
+        if (flipped) {
+            return ( <> 
+                <h2>Edit Ice Cream</h2>
+                <form onSubmit={onClick}>
+                    <div className="form-containers">
+                        <label htmlFor="name">Name:</label>
+                        <input type = "text" name="name" onChange= {changeName}/>
+                    </div>
+                    <div className="form-containers">
+                        <label htmlFor="age">Age:</label>
+                        <input type = "number" name="age" onChange={changeAge} />
+                    </div>
+                    <div className="form-containers">
+                        <label htmlFor="breed">Breed:</label>
+                        <input type = "text" name="breed" onChange={changeBreed}/>
+                    </div>
+                    <div className="form-containers">
+                        <input type = "submit" />
+                    </div>
+                </form>
+             </>)
+        } else {
+            return (
+                <>
+                  <h2>{name}</h2>
+                  <p>{age}</p>
+                  <p>{breed}</p>
+                </>
+              );
+        }
+    }
 }
 ```
 
