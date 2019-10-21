@@ -51,7 +51,7 @@ MVP:
 
 #### PostMVP EXAMPLE
 
-- Random Outfit from list button
+- Random Outfit button
 - Random Outfit Creator
 
 ## ERD Diagram
