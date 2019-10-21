@@ -91,6 +91,15 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
+| Project Design | H | 3hrs| 4hrs | :---: |
+| Pseudocode | M | 3hrs| :---: | :---: |
+| Create DB (models, migration, seed) | H | 3hrs | :---: | :---: |
+| Create rest of backend including routes | H | 3hrs| :---: | :---: |
+| REACT structure | H | 6hrs| :---: | :---: |
+| JSX logic and routing | H | 6hrs| :---: | :---: |
+| CSS styling | M | 10hrs| 10hrs | 10hrs |
+| Total | H | 34hrs| 35hrs | :---: |
+
 | Create DB (models, migration, seed) | H | 2hrs| :---: | :---: |
 | Setting up express router | H | 2hrs| :---: | :---: |
 | Create-react-app (set-up skeleton) | H | 1/2hrs | :---: | :---: |
@@ -129,64 +138,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
 
 ```
-const CatContainer = ({cat}) => {
-    const [flipped, setFlipped] = useState(false)
-    const [name, setName] = useState(cat.name)
-    const [age, setAge] = useState(cat.age)
-    const [breed, setBreed] = useState(cat.breed)
 
-    const changeName = (e) => {
-        setName(e.target.value)
-    }
-    const changeAge = (e) => {
-        setAge(e.target.value)
-    }
-    const changeBreed = (e) => {
-        setBreed(e.target.value)
-    }
-
-    const onClick = (e) => {
-        e.preventDefault()
-        axios.put(`/cats/id/${cat.id}`, {name, age, breed})
-            .then(response => {
-                console.log("response from put:\n", response);
-            }).catch(err => console.log("Error while putting!", err))
-        setFlipped(f => !f)
-    }
-
-    const showCard = () => {
-        if (flipped) {
-            return ( <> 
-                <h2>Edit Ice Cream</h2>
-                <form onSubmit={onClick}>
-                    <div className="form-containers">
-                        <label htmlFor="name">Name:</label>
-                        <input type = "text" name="name" onChange= {changeName}/>
-                    </div>
-                    <div className="form-containers">
-                        <label htmlFor="age">Age:</label>
-                        <input type = "number" name="age" onChange={changeAge} />
-                    </div>
-                    <div className="form-containers">
-                        <label htmlFor="breed">Breed:</label>
-                        <input type = "text" name="breed" onChange={changeBreed}/>
-                    </div>
-                    <div className="form-containers">
-                        <input type = "submit" />
-                    </div>
-                </form>
-             </>)
-        } else {
-            return (
-                <>
-                  <h2>{name}</h2>
-                  <p>{age}</p>
-                  <p>{breed}</p>
-                </>
-              );
-        }
-    }
-}
 ```
 
 ## Issues and Resolutions
