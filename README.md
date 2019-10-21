@@ -43,7 +43,7 @@ Outfit table:
 ### MVP/PostMVP - 5min
 
 MVP:
-- database container multiple clothing tables (based on category) and outfit table (hold clothing IDs for associations)
+- database containing multiple clothing tables (based on category) and outfit table (hold clothing IDs for associations)
 - Show a list of each clothing category 
 - Allow user to CRUD outfits
 - Allow user to CRUD clothing articles
