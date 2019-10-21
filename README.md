@@ -65,8 +65,9 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | --- | :---: |  
 | Header | This will render the header include the nav | 
 | Footer | This will render the footer  | 
-| App | This will hold the Header, Main, and Footer. Router will wrap Header and Main here. - will hold state |
-| Main | This will hold the rest of the components |
+| App | This will hold the Header, Main, and Footer. Router will wrap Header and Main here. |
+| Main | This will hold the rest of the components - will hold state |
+| Home | Homepage for the site|
 | ClothingList | Hold list of all clothing items |
 | OutfitList | Hold list of all outfits |
 | CreateClothing | Where the user will be able to create new items and add them to the clothing tables |
