@@ -99,7 +99,6 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | JSX logic and routing | H | 6hrs| :---: | :---: |
 | CSS styling | M | 10hrs| 10hrs | 10hrs |
 | Total | H | 34hrs| 35hrs | :---: |
-
 | Create DB (models, migration, seed) | H | 2hrs| :---: | :---: |
 | Setting up express router | H | 2hrs| :---: | :---: |
 | Create-react-app (set-up skeleton) | H | 1/2hrs | :---: | :---: |
