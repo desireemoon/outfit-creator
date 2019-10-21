@@ -32,6 +32,7 @@ Clothing tables (Shirt, pants, shoes, etc..):
 - Brand
 - Color 
 - Fabric
+- isDirty
 
 Outfit table:
 - Outfit_id (PK)
