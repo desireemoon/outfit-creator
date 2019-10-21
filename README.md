@@ -117,6 +117,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 ## Additional Libraries
 - react-router
 - axios
+- sequelize
 - react-router-dom
 - @fortawesome/fontawesome-svg-core
 - @fortawesome/free-brands-svg-icons
