@@ -7,13 +7,13 @@ class CreateOutfit extends Component {
         super(props)
         this.state = {
             // UPDATE STATE WHEN OUTFIT ATTRIBUTES ARE DECIDED ON
-            hat: []
+            name: "",
+            creator: ""
         }
     }
     onChange = (e) => {
         // UPDATE THIS WHEN STATE IS DECIDED ON
-        const attribute = e.target;
-        const {name, value} = attribute
+        const {name, value} = e.target;
         let newValue = {}
         newValue[name] = value
         this.setState({
@@ -37,7 +37,7 @@ class CreateOutfit extends Component {
                     <h1>Create Outfit</h1>
                     <form onChange={this.onChange}>
                         {/* UPDATE FORMS WHEN STATE IS DECIDED ON */}
-                        <label htmlFor = 'hate'>Hat:</label>
+                        <label htmlFor = 'hat'>Hat:</label>
                         <input type='text' name= 'hat' value={this.state}></input>
                         <br></br>
                         <label htmlFor = 'shirt'>Shirt:</label>
