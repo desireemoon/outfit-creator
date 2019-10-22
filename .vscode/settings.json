@@ -1,0 +1,13 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "closet_db_development",
+            "dialect": "PostgreSQL",
+            "name": "closet_db_development",
+            "password": "postgres",
+            "port": 5432,
+            "server": "localhost",
+            "username": "desireedewysocki"
+        }
+    ]
+}
