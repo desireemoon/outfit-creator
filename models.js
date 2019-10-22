@@ -51,9 +51,7 @@ Outfit.init (
         name : {
         type: DataTypes.STRING,
         unique: true
-        },
-        hat_id: DataTypes.INTEGER,
-        Shirt_id: DataTypes.INTEGER
+        }
     },
     {   
         freezeTableName: true,     // stops sequelize from doing its automatic pluralization
@@ -65,8 +63,8 @@ Outfit.init (
 Hat.hasMany(Outfit)
 Outfit.belongsTo(Hat)
 
-Shirt.hasMany(Outfit)
-Outfit.belongsTo(Shirt)
+
+
 
 // export class Article extends Model {}
 

@@ -31,11 +31,13 @@ const getAllOutfits = async (
     /** @type {express.Response}*/  res     // <-the type annotation for the response argument
     ) => {
     try {
-        const outfits = await Outfit.findAll({
+        const outfits = await Outfit.findAll(
+            {
             include: [{
-                model: Article
-        }]
-    })
+                model: Hat
+            }]
+         }
+    )
         return res.status(200).json({outfits})
     } catch (error) {
         return res.status(500).send(error.message)
@@ -156,7 +158,8 @@ const deleteOutfit = async (req, res) => {
 
 export const closetRouter = Router()
 
-closetRouter.get("/articles", getAllArticles)
+closetRouter.get("/hats", getAllHats)
+closetRouter.get("/shirts", getAllShirts)
 closetRouter.get("/outfits", getAllOutfits)
 closetRouter.get("/articles/id/:id", getArticleById)
 closetRouter.get("/outfits/id/:id", getOutfitById)

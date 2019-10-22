@@ -1,31 +1,47 @@
 import { Hat, Shirt, Outfit } from './models'
 
-const hats = [
-    {
+
+
+const main = async () => {
+    const firstHat = await Hat.create({
         name: "first hat",
         imgUrl: ""
-    }
-]
+    })
+    const firstOutfit = await Outfit.create({
+        name: "first outfit"
+    })
+    await firstOutfit.setHat(firstHat)
 
-const shirts = [
-    {
-        name: "first shirt",
-        imgUrl: ""
-    }
-]
+    const secondOutfit = await Outfit.create({
+        name: "second outfit"
+    })
+    await secondOutfit.setHat(firstHat)
 
-const outfits = [
-    {
-        name:"first outfit",
-        hat_id: "1",
-        shirt_id:"1"
-    }
-]
+}
 
-const seedTables = () => {
-    hats.forEach(async hat => await Hat.create(hat))
-    shirts.forEach(async shirt => await Shirt.create(shirt))
-    outfits.forEach(async outfit => await Outfit.create(outfit))
+main()
+
+
+// const shirts = [
+//     {
+//         name: "first shirt",
+//         imgUrl: ""
+//     }
+// ]
+
+// const outfits = [
+//     {
+//         name:"first outfit",
+//     }
+// ]
+
+// const seedTables = async () => {
+//     hats.forEach(async hat => await Hat.create(hat))
+//     shirts.forEach(async shirt => await Shirt.create(shirt))
+//     outfits.forEach(async outfit => {
+//                                         await Outfit.create(outfit)
+//                                     })
+//     await outfits[0].setHat(hats[0]);
 
     // outfits.forEach(async outfit => {try {
     //     await Outfit.create(outfit)
@@ -34,9 +50,10 @@ const seedTables = () => {
         
     // } 
     // })
-}
+// }
 
-seedTables()
+// seedTables()
+
 
 // const articles = [
 //     {   name : "first shirt",
