@@ -9,6 +9,8 @@ const Footer = () => {
             <div className="links">
                 {/* UPDATE ICONS LATER */}
                 <div class="social"><a href="https://git.generalassemb.ly/desireemoon/outfit-creator"><FontAwesomeIcon icon={['fab', 'linkedin']} size="3x" className="font-icon" /></a></div>
+                <div class="social"><a href="https://git.generalassemb.ly/desireemoon/outfit-creator"><FontAwesomeIcon icon={['fab', 'linkedin']} size="3x" className="font-icon" /></a></div>
+                <div class="social"><a href="https://git.generalassemb.ly/desireemoon/outfit-creator"><FontAwesomeIcon icon={['fab', 'linkedin']} size="3x" className="font-icon" /></a></div>                                
             </div>
         </div>
     )
