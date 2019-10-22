@@ -49,16 +49,31 @@ const getAllOutfits = async (
     }
 }
 
-const getArticleById = async (req,res) => {
+const getHatById = async (req,res) => {
     try {
         const id = req.params.id;
-        const article = await Article.findAll({
+        const hat = await Hat.findAll({
             where: {id: id}
         })
-        if (article) {
-            return res.status(200).json({article})
+        if (hat) {
+            return res.status(200).json({hat})
         }
-        return res.status(404).send('Article with the specified ID does not exists');
+        return res.status(404).send('Hat with the specified ID does not exists');
+    } catch(error) {
+        return res.status(500).send(error.message)
+    }
+}
+
+const getShirtById = async (req,res) => {
+    try {
+        const id = req.params.id;
+        const shirt = await Shirt.findAll({
+            where: {id: id}
+        })
+        if (shirt) {
+            return res.status(200).json({shirt})
+        }
+        return res.status(404).send('Shirt with the specified ID does not exists');
     } catch(error) {
         return res.status(500).send(error.message)
     }
@@ -166,7 +181,8 @@ export const closetRouter = Router()
 closetRouter.get("/hats", getAllHats)
 closetRouter.get("/shirts", getAllShirts)
 closetRouter.get("/outfits", getAllOutfits)
-closetRouter.get("/articles/id/:id", getArticleById)
+closetRouter.get("/hats/id/:id", getHatById)
+closetRouter.get("/shirts/id/:id", getShirtById)
 closetRouter.get("/outfits/id/:id", getOutfitById)
 closetRouter.post("/articles", createArticle)
 closetRouter.post("/outfits", createOutfit)
