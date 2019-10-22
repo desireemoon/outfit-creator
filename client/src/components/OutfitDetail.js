@@ -10,17 +10,17 @@ class OutfitDetail extends Component {
         }
     }
     componentDidMount = async () => {
-        // update api adress
+        // UPDATE API ADRESS
         response = await Axios.get(``)
         this.setState({
             outfit: response.data
         })
     }
     delete = async () => {
-        // update api adress
+        // UPDATE API ADRESS
         let deleted = await Axios.delete(``); 
         console.log(`Deleted outfit with ID ${this.props.match.params.id}`);
-        // might need to be adjusted
+        // REDIRECT MIGHT NEED ADJUSTMENT 
         if (deleted) {
             <Redirect to={``}/>
         }
@@ -28,8 +28,16 @@ class OutfitDetail extends Component {
     render() {
         return(
             <div className="outfit-detail">
-                <div className="outfit-detail-article-container">
-                    <div className="outfit-detail-article"></div>
+                <div className="outfit-detail-articles-container">
+                    <div className="outfit-detail-article">
+
+                    </div>
+                    <div className="outfit-detail-article">
+                        
+                    </div>
+                    <div className="outfit-detail-article">
+                        
+                    </div>                                        
                 </div>
                 <div className="buttons">
                     <Link to={``}><button className="back" type="button" onclick={}>Back</button></Link>
