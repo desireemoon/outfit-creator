@@ -82,9 +82,21 @@ const getShirtById = async (req,res) => {
 const getOutfitById = async (req,res) => {
     try {
         const id = req.params.id;
-        const outfit = await Outfit.findAll({
-            where: {id: id}
-        })
+        console.log(id);
+        
+        const outfit = await Outfit.findOne(
+            {
+                where: {id: parseInt(id)},
+                include: [
+                    {
+                        model: Hat
+                    },
+                    {
+                        model: Shirt
+                    },
+                ]
+            }
+    )
         if (outfit) {
             return res.status(200).json({outfit})
         }
@@ -94,11 +106,78 @@ const getOutfitById = async (req,res) => {
     }
 }
 
-const createArticle = async (req, res) => {
+const getHatByName = async (req,res) => {
     try {
-        const article = await Article.create(req.body)
+        const name = req.params.name;
+        const hat = await Hat.findAll({
+            where: {name: name}
+        })
+        if (hat) {
+            return res.status(200).json({hat})
+        }
+        return res.status(404).send('Hat with the specified name does not exists');
+    } catch(error) {
+        return res.status(500).send(error.message)
+    }
+}
+
+const getShirtByName = async (req,res) => {
+    try {
+        const name = req.params.name;
+        const shirt = await Shirt.findAll({
+            where: {name: name}
+        })
+        if (shirt) {
+            return res.status(200).json({shirt})
+        }
+        return res.status(404).send('Shirt with the specified name does not exists');
+    } catch(error) {
+        return res.status(500).send(error.message)
+    }
+}
+
+const getOutfitByName = async (req,res) => {
+    try {
+        const name = req.params.name;
+        const outfit = await Outfit.findAll(
+            {
+                where: {name: name},
+                include: [
+                    {
+                        model: Hat
+                    },
+                    {
+                        model: Shirt
+                    },
+                ]
+            }
+
+    )
+        if (outfit) {
+            return res.status(200).json({outfit})
+        }
+        return res.status(404).send('Outfit with the specified ID does not exists');
+    } catch(error) {
+        return res.status(500).send(error.message)
+    }
+}
+
+const createHat = async (req, res) => {
+    try {
+        const hat = await Hat.create(req.body)
         return res.status(201).json({new:{
-            article
+            hat
+        }})
+    } catch(error) {
+        return res.status(500).send(error.message)
+    }
+}
+
+const createShirt = async (req, res) => {
+    try {
+        const shirt = await Shirt.create(req.body)
+        return res.status(201).json({new:{
+            shirt
         }})
     } catch(error) {
         return res.status(500).send(error.message)
@@ -181,11 +260,19 @@ export const closetRouter = Router()
 closetRouter.get("/hats", getAllHats)
 closetRouter.get("/shirts", getAllShirts)
 closetRouter.get("/outfits", getAllOutfits)
+
 closetRouter.get("/hats/id/:id", getHatById)
 closetRouter.get("/shirts/id/:id", getShirtById)
 closetRouter.get("/outfits/id/:id", getOutfitById)
-closetRouter.post("/articles", createArticle)
+
+closetRouter.get("/hats/name/:name", getHatByName)
+closetRouter.get("/shirts/name/:name", getShirtByName)
+closetRouter.get("/outfits/name/:name", getOutfitByName)
+
+closetRouter.post("/hats", createHat)
+closetRouter.post("/shirts", createShirt)
 closetRouter.post("/outfits", createOutfit)
+
 closetRouter.put("/articles/id/:id", updateArticle)
 closetRouter.put("/outfits/id/:id", updateOutfit)
 closetRouter.delete("/articles/id/:id", deleteArticle)

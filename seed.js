@@ -5,23 +5,34 @@ import { Hat, Shirt, Outfit } from './models'
 const main = async () => {
     const firstHat = await Hat.create({
         name: "first hat",
-        imgUrl: ""
-    })
-    const firstOutfit = await Outfit.create({
-        name: "first outfit"
-    })
-    await firstOutfit.setHat(firstHat)
+        imgUrl: "",
+        url: "",
+        creator: "Des"
 
-    const secondOutfit = await Outfit.create({
-        name: "second outfit"
     })
-    await secondOutfit.setHat(firstHat)
+
     const firstShirt = await Shirt.create({
         name: "first shirt",
-        imgUrl: ""
+        imgUrl: "",
+        url: "",
+        creator: "Des"
     })
+
+    const firstOutfit = await Outfit.create({
+        name: "first outfit",
+        creator: "Des"
+    })
+    
+
+    const secondOutfit = await Outfit.create({
+        name: "second outfit",
+        creator: "Des"
+    })
+
+    await firstOutfit.setHat(firstHat)
     await firstOutfit.setShirt(firstShirt)
 
+    await secondOutfit.setHat(firstHat)
     await secondOutfit.setShirt(firstShirt)
 
 

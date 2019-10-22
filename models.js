@@ -16,7 +16,9 @@ Hat.init(
             type: DataTypes.STRING,
             unique: true
         },
-        imgUrl: DataTypes.TEXT
+        imgUrl: DataTypes.TEXT,
+        url: DataTypes.TEXT,
+        creator: DataTypes.STRING
     },
     {   
         freezeTableName: true,     // stops sequelize from doing its automatic pluralization
@@ -35,7 +37,9 @@ Shirt.init(
             type: DataTypes.STRING,
             unique: true
         },
-        imgUrl: DataTypes.TEXT
+        imgUrl: DataTypes.TEXT,
+        url: DataTypes.TEXT,
+        creator: DataTypes.STRING
     },
     {   
         freezeTableName: true,     // stops sequelize from doing its automatic pluralization
@@ -51,7 +55,8 @@ Outfit.init (
         name : {
         type: DataTypes.STRING,
         unique: true
-        }
+        },
+        creator: DataTypes.STRING
     },
     {   
         freezeTableName: true,     // stops sequelize from doing its automatic pluralization
