@@ -28,17 +28,23 @@ class OutfitDetail extends Component {
     render() {
         return(
             <div className="outfit-detail">
+            {/* UPDATE WHEN MORE ARTICLE TABLES ARE ADDED */}
+                {this.state.outfit.Hat && 
                 <div className="outfit-detail-articles-container">
-                    <div className="outfit-detail-article">
-
-                    </div>
-                    <div className="outfit-detail-article">
-                        
-                    </div>
-                    <div className="outfit-detail-article">
-                        
-                    </div>                                        
-                </div>
+                    {/* UPDATE WHEN MORE ARTICLE ATTRIBUTES ARE ADDED */}
+                     <div className="outfit-details-articles-container-name">{this.state.outfit.Hat.name}</div>
+                     <div className="outfit-details-articles-container-creator">{this.state.outfit.Hat.creator}</div>    
+                     <div className="outfit-details-articles-container-url">{this.state.outfit.Hat.url}</div>    
+                     <div className="outfit-details-articles-container-imgUrl">{this.state.outfit.Hat.imgUrl}</div>
+                </div>}
+                {this.state.outfit.Shirt && 
+                <div className="outfit-detail-articles-container">
+                    {/* UPDATE WHEN MORE ARTICLE ATTRIBUTES ARE ADDED */}
+                     <div className="outfit-details-articles-container-name">{this.state.outfit.Shirt.name}</div>
+                     <div className="outfit-details-articles-container-creator">{this.state.outfit.Shirt.creator}</div>    
+                     <div className="outfit-details-articles-container-url">{this.state.outfit.Shirt.url}</div>    
+                     <div className="outfit-details-articles-container-imgUrl">{this.state.outfit.Shirt.imgUrl}</div>
+                </div>}
                 <div className="buttons">
                     <Link to={``}><button className="back" type="button" onclick={}>Back</button></Link>
                     <Link to={``}><button className="edit" type="button" onclick={}>Edit</button></Link>
