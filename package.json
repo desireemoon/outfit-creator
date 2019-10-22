@@ -1,0 +1,54 @@
+{
+  "name": "outfit-creator",
+  "version": "1.0.0",
+  "description": "CRUD outfit creator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run server",
+    "babel-server": "babel-node ./server.js",
+    "server": "babel-watch ./server.js",
+    "resetdb": "babel-node ./resetDb.js",
+    "seed": "babel-node ./seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.generalassemb.ly/desireemoon/outfit-creator.git"
+  },
+  "keywords": [
+    "outfit",
+    "creator",
+    "clothing"
+  ],
+  "author": "Desiree deWysocki, Nathan Pezzotti, Kenneth Williams",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.4",
+    "pg": "^7.12.1",
+    "sequelize": "^5.21.1",
+    "sequelize-cli": "^5.5.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "babel-watch": "^7.0.0"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  }
+
+}
