@@ -16,10 +16,20 @@ const main = async () => {
         name: "second outfit"
     })
     await secondOutfit.setHat(firstHat)
+    const firstShirt = await Shirt.create({
+        name: "first shirt",
+        imgUrl: ""
+    })
+    await firstOutfit.setShirt(firstShirt)
+
+    await secondOutfit.setShirt(firstShirt)
+
 
 }
 
 main()
+
+
 
 
 // const shirts = [

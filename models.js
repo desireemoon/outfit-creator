@@ -63,6 +63,8 @@ Outfit.init (
 Hat.hasMany(Outfit)
 Outfit.belongsTo(Hat)
 
+Shirt.hasMany(Outfit)
+Outfit.belongsTo(Shirt)
 
 
 

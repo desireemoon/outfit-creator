@@ -33,9 +33,14 @@ const getAllOutfits = async (
     try {
         const outfits = await Outfit.findAll(
             {
-            include: [{
+            include: [
+                {
                 model: Hat
-            }]
+            },
+            {
+                model: Shirt
+            },
+        ]
          }
     )
         return res.status(200).json({outfits})
