@@ -13,8 +13,10 @@ const App = () => {
         <div className="header-container">
             <Header  />
           </div>
+          <div className="main-larger-container">
           <div className="main-container">
             <Main />
+          </div>
           </div>
       </Router>
         <div className="footer-container">

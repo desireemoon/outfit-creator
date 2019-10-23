@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import axios from "axios"
+import ItemDetails from "./ItemDetails"
 import {Link} from 'react-router-dom'
+
 
 class ItemList extends Component {
   constructor(props) {
@@ -16,8 +18,10 @@ class ItemList extends Component {
     let response = await axios.get("")
     console.log(response.data)
     this.setState({
-      articles:response.data
+      articles:response.data 
     })
+   
+    
   }
 
   render() {
