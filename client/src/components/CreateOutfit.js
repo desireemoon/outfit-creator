@@ -1,15 +1,16 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 import Axios from 'axios'
+import ItemList from './ItemList'
 
 class CreateOutfit extends Component {
     constructor(props) {
         super(props)
         this.state = {
             // UPDATE STATE WHEN BACKEND IS FINISHED
-            article1,
-            article2,
-            article3
+            article1: [],
+            article2: [],
+            article3: []
         }
     }
     onChange = (e) => {

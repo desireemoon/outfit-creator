@@ -10,7 +10,7 @@ class OutfitList extends Component {
         }
     }
     componentDidMount = async () => {
-        response = await Axios.get('')
+        let response = await Axios.get('')
         console.log(response)
         this.setState({
             outfits: response.data

@@ -1,14 +1,15 @@
 import React from 'react';
 import Axios from 'axios';
+import { Link, Redirect } from 'react-router-dom'
 
 const OutfitDetailContainer = (props) => {
     async function handleDelete() {
         // UPDATE URL WHEN FINISHED
         let deleted = await Axios.delete(`${props.outfit.id}`)
         console.log(deleted)
-        if (deleted) {
-            <Redirect to={'/outfits'}/>
-        }
+        // if (deleted) {
+        //     <Redirect to={'/outfits'}/>
+        // }
     }
     return(
         <div className="outfit-container">

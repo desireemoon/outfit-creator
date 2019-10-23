@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import Axios from 'axios'
 import OutfitDetailContainer from './OutfitDetailContainer'
+import EditOutfit from './EditOutfit'
 
 class OutfitDetail extends Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class OutfitDetail extends Component {
     }
     componentDidMount = async () => {
         // UPDATE API ADRESS
-        response = await Axios.get(``)
+        let response = await Axios.get(``)
         this.setState({
             outfit: response.data
         })

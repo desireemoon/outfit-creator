@@ -1,6 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch} from 'react-router-dom';
-import Header from './Header';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './Home';
 import CreateItem from './CreateItem';
 import CreateOutfit from './CreateOutfit';
@@ -13,7 +12,6 @@ import NotFound from './NotFound';
 function Main() {
   return (
     <div className="main">
-      <Header />
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/create-clothing' component={CreateItem} />
@@ -28,7 +26,4 @@ function Main() {
   );
 }
 
-export default () =>
-  <Router>
-    <Main />
-  </Router>
+export default Main
