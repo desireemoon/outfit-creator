@@ -15,7 +15,7 @@ const App = () => {
           </div>
           <div className="main-larger-container">
           <div className="main-container">
-            <Main />
+            <Main className="test" />
           </div>
           </div>
       </Router>
