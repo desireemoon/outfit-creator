@@ -6,9 +6,10 @@ class CreateOutfit extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            // UPDATE STATE WHEN OUTFIT ATTRIBUTES ARE DECIDED ON
-            name: "",
-            creator: ""
+            // UPDATE STATE WHEN BACKEND IS FINISHED
+            article1,
+            article2,
+            article3
         }
     }
     onChange = (e) => {
@@ -23,7 +24,8 @@ class CreateOutfit extends Component {
     }
     onSubmit = async (e) => {
         e.preventDefault()
-        let response = await axios.post(``, this.state)
+        // UPDATE API ADDRESS WHEN BACKEND IS COMPLETE
+        let response = await Axios.post(``, this.state)
         console.log(response)
     }
     render() {
@@ -37,14 +39,14 @@ class CreateOutfit extends Component {
                     <h1>Create Outfit</h1>
                     <form onChange={this.onChange}>
                         {/* UPDATE FORMS WHEN STATE IS DECIDED ON */}
-                        <label htmlFor = 'hat'>Hat:</label>
-                        <input type='text' name= 'hat' value={this.state}></input>
+                        <label htmlFor ='hat'>Article:</label>
+                        <input type='text' name= 'article1' value={this.state}></input>
                         <br></br>
-                        <label htmlFor = 'shirt'>Shirt:</label>
-                        <input type= 'text' name= 'shirt' value={this.state}></input>
+                        <label htmlFor = 'shirt'>Article:</label>
+                        <input type= 'text' name= 'article2' value={this.state}></input>
                         <br></br>
-                        <label htmlFor = 'pants'>Pants:</label>
-                        <input type='text' name= 'pants' value={this.state}></input>
+                        <label htmlFor = 'pants'>Article:</label>
+                        <input type='text' name= 'article3' value={this.state}></input>
                         <br></br>
                         <input type="submit" onClick={this.onSubmit}></input>
                     </form>

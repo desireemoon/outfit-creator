@@ -7,16 +7,16 @@ const Header = () => {
         <h1 className="title">Outfit Creator</h1>
       </Link>
       <nav className="nav-bar">
-        <Link className="nav-link" to="/animals">
+        <Link className="nav-link" to="/clothing">
           <button className="link-button">Clothing</button>
         </Link>
-        <Link className="nav-link" to="/random">
+        <Link className="nav-link" to="/outfits">
           <button className="link-button">Outfits</button>
         </Link>
-        <Link className="nav-link" to="/status">
+        <Link className="nav-link" to="/create-clothing">
           <button className="link-button">Create Clothing</button>
         </Link>
-        <Link className="nav-link" to="/status">
+        <Link className="nav-link" to="/create-outfit">
           <button className="link-button">Create Outfit</button>
         </Link>
       </nav>

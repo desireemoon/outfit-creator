@@ -16,11 +16,11 @@ function Main() {
       <Header />
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route exact path='/create-item' component={CreateItem} />
+        <Route exact path='/create-clothing' component={CreateItem} />
         <Route exact path='/create-outfit' component={CreateOutfit} />
-        <Route exact path='/items' component={ItemList} />
+        <Route exact path='/clothing' component={ItemList} />
         <Route exact path='/outfits' component={OutfitList} />
-        <Route exact path='/items/:id' component={ItemDetails} />
+        <Route exact path='/clothing/:id' component={ItemDetails} />
         <Route exact path='/outfits/:id' component={OutfitDetail} />
         <Route component={NotFound} />
       </Switch>

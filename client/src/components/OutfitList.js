@@ -20,7 +20,7 @@ class OutfitList extends Component {
         return(
             <div>
                 {this.state.outfits.map(outfit => (
-                    <p key={outfit.id}><Link to={``}>{outfit.name}</Link></p>))}
+                    <p key={outfit.id}><Link to={`/outfits/${outfit.id}`}>{outfit.name}</Link></p>))}
             </div>
         )
     }
