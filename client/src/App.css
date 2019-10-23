@@ -3,6 +3,7 @@
 }
 .header {
   background-image: url("./images/18219.jpg");
+  height: 100px;
 }
 .home-link {
   text-align: center;
