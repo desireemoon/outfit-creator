@@ -163,39 +163,53 @@ const updateArticle = async (req,res) => {
         }
     };
     
-    const updateOutfit = async (req,res) => {
-        try {
-            const updated = await Outfit.update(req.body, {
-                where: { id: req.params.id }
-            });
-            console.log(updated)
-            if (updated) {
-                const updatedOutfit = await Outfit.findOne({ where: { id: req.params.id } });
-                req.body.articles.forEach( async article => {
-                    const newArticle = await Article.findByPk(article.id)
-                   if(!newArticle) {
-                       return res.status(400)
-                   }
-                   const oa = {
-                       outfit_id: req.params.id,
-                       article_id: article.id
-                   }
-                    console.log(oa)
-                    const outfitArticle = await OutfitArticle.update(oa, {where: { outfit_id: req.params.id }})
-               });
-               return res.status(201).json(
-                    {
-                        outfit:{
-                        updatedOutfit
-                        }
-                    }
-                )
-            }
+    // const updateOutfit = async (req,res) => {
+    //     try {
+    //         const updated = await Outfit.update(req.body, {
+    //             where: { id: req.params.id }
+    //         });
+    //         console.log(updated)
+    //         if (updated) {
+    //             const updatedOutfit = await Outfit.findOne({ where: { id: req.params.id } });
+    //             req.body.articles.forEach( async article => {
+    //                 const newArticle = await Article.findByPk(article.id)
+    //                if(!newArticle) {
+    //                    return res.status(400)
+    //                }
+    //                const oa = {
+    //                    outfit_id: req.params.id,
+    //                    article_id: article.id
+    //                }
+    //                 console.log(oa)
+    //                 const outfitArticle = await OutfitArticle.update(oa, {where: { outfit_id: req.params.id }})
+    //            });
+    //            return res.status(201).json(
+    //                 {
+    //                     outfit:{
+    //                     updatedOutfit
+    //                     }
+    //                 }
+    //             )
+    //         }
             
-        } catch(error) {
-            return res.status(500).send(error)
-        }
-    };
+    //     } catch(error) {
+    //         return res.status(500).send(error)
+    //     }
+    // };
+    const updateOutfit = async (req,res) => {
+            try {
+                const updated = await Outfit.update(req.body, {
+                    where: { id: req.params.id }
+                });
+                if (updated) {
+                    const updatedOutfit = await Outfit.findOne({ where: { id: req.params.id } });
+                    return res.status(200).json({ updatedOutfit });
+                }
+                throw new Error('Item not found');
+            } catch (error) {
+                return res.status(500).send(error.message);
+            }
+        };
 
     const addArticleToOutfit = async (req, res) => {
         try {
@@ -211,7 +225,11 @@ const updateArticle = async (req,res) => {
             // grab Article with id from req.perams.id 
             //outfit.addArticle(_)
             //return new outfit
-            res.json(outfitWithArticles);
+            const newOutfit = await Outfit.findOne({
+                where: { id: req.params.outfit_id },
+                include: [Article]
+            });
+            res.json(newOutfit);
         } catch (e) {
             res.status(400).json(e.message);
         }
@@ -241,6 +259,35 @@ const updateArticle = async (req,res) => {
         }
     }
     
+    const deleteArticle = async (req, res) => {
+    try {
+        const id = req.params.id
+        const deleted = await Article.destroy({
+            where: {id:id}
+        })
+        if (deleted) {
+            return res.status(200).send('Article deleted')
+        }
+        throw new Error('Article not found')
+    } catch(error) {
+        res.status(500).send(error.message)
+    }
+}
+
+const deleteOutfit = async (req, res) => {
+    try {
+        const id = req.params.id
+        const deleted = await Outfit.destroy({
+            where: {id:id}
+        })
+        if (deleted) {
+            return res.status(200).send('Outfit deleted')
+        }
+        throw new Error('Outfit not found')
+    } catch(error) {
+        res.status(500).send(error.message)
+    }
+}
 
 export const closetRouter = Router()
 
@@ -262,6 +309,8 @@ closetRouter.put("/outfits/:id", updateOutfit)
 closetRouter.put("/outfits/:outfit_id/articles/add/:id", addArticleToOutfit);
 closetRouter.put("/outfits/:outfit_id/articles/remove/:id", deleteArticleFromOutfit);
 
+closetRouter.delete("/articles/:id", deleteArticle)
+closetRouter.delete("/outfits/:id", deleteOutfit)
 
 // const getAllHats = async (
 //     /** @type {express.Request} */  req,    // <-the type annotation for the request argument
