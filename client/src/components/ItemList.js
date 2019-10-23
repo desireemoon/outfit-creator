@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import axios from "axios"
-import Item from "./ItemDetails"
+import {Link} from 'react-router-dom'
 
 class ItemList extends Component {
   constructor(props) {
@@ -13,20 +13,19 @@ class ItemList extends Component {
   }
   componentDidMount = async () => {
     // update route for axios call
-    let response = await axios.get("/")
+    let response = await axios.get("")
     console.log(response.data)
     this.setState({
       articles:response.data
     })
   }
 
-  
   render() {
   return (
     <div>
     
       {this.state.articles.map(article => {
-        return <ItemDetails key = {article.id} article = {article} />
+        return <Link to={`/clothing/${article.id}`} key = {article.id} article = {article} />
       })}
     
   

@@ -37,7 +37,6 @@ class CreateOutfit extends Component {
                     <ItemList />
                 </div>
                 <div className="create-form">
-                    <h1>Create Outfit</h1>
                     <form onChange={this.onChange}>
                         {/* UPDATE FORMS WHEN STATE IS DECIDED ON */}
                         <label htmlFor ='hat'>Article:</label>
