@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import axios from "axios"
-import Item from "./ItemDetails"
+import ItemDetails from "./ItemDetails"
+
 
 class ItemList extends Component {
   constructor(props) {
@@ -13,11 +14,13 @@ class ItemList extends Component {
   }
   componentDidMount = async () => {
     // update route for axios call
-    let response = await axios.get("/")
+    let response = await axios.get("")
     console.log(response.data)
     this.setState({
-      articles:response.data
+      articles:response.data 
     })
+   
+    
   }
 
   
