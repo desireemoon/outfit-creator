@@ -1,28 +1,45 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
-const Header = () => {
-  return (
-    <div className="header">
-      <Link className="home-link" to="/">
-        <h1 className="title">Outfit Creator</h1>
-      </Link>
-      <nav className="nav-bar">
-        <Link className="nav-link" to="/clothing">
-          <button className="link-button">Clothing</button>
+class Header extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      displayMenu: false,
+    };
+    this.showDropdownMenu = this.showDropdownMenu.bind(this);
+  }
+  showDropdownMenu(event) {
+  event.preventDefault();
+  this.setState({ displayMenu: !this.state.displayMenu });
+  }
+  render() {
+    return (
+      <div className="header">
+        <Link className="home-link" to="/">
+          <h1 className="title">Outfit Creator</h1>
         </Link>
-        <Link className="nav-link" to="/outfits">
-          <button className="link-button">Outfits</button>
-        </Link>
-        <Link className="nav-link" to="/create-clothing">
-          <button className="link-button">Create Clothing</button>
-        </Link>
-        <Link className="nav-link" to="/create-outfit">
-          <button className="link-button">Create Outfit</button>
-        </Link>
-      </nav>
-    </div>
-  );
+        <div className="nav-bar">
+          <Link className="nav-link" to="/clothing">
+            <div className="link-button">Clothing</div>
+          </Link>
+          <Link className="nav-link" to="/outfits">
+            <div className="link-button">Outfits</div>
+          </Link>
+          <div className="dropdown">
+            <div className="create-button" onClick={this.showDropdownMenu}>Create</div>
+          { this.state.displayMenu ? (
+            <div className="dropdown-content">
+              <Link to="/create-clothing"><div>Clothing</div></Link>
+              <Link to="/create-outfit"><div>Outfit</div></Link>
+            </div>
+          ):(null)}
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
+
 
 export default Header;
