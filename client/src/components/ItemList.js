@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import axios from "axios"
 import ItemDetails from "./ItemDetails"
+import {Link} from 'react-router-dom'
 
 
 class ItemList extends Component {
@@ -23,13 +24,12 @@ class ItemList extends Component {
     
   }
 
-  
   render() {
   return (
     <div>
     
       {this.state.articles.map(article => {
-        return <ItemDetails key = {article.id} article = {article} />
+        return <Link to={`/clothing/${article.id}`} key = {article.id} article = {article} />
       })}
     
   
