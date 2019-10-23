@@ -148,19 +148,120 @@ const createOutfit = async (req, res) => {
     }
 }
 
+const updateArticle = async (req,res) => {
+        try {
+            const updated = await Article.update(req.body, {
+                where: { id: req.params.id }
+            });
+            if (updated) {
+                const updatedArticle = await Article.findOne({ where: { id: req.params.id } });
+                return res.status(200).json({ article: updatedArticle });
+            }
+            throw new Error('Item not found');
+        } catch (error) {
+            return res.status(500).send(error.message);
+        }
+    };
+    
+    const updateOutfit = async (req,res) => {
+        try {
+            const updated = await Outfit.update(req.body, {
+                where: { id: req.params.id }
+            });
+            console.log(updated)
+            if (updated) {
+                const updatedOutfit = await Outfit.findOne({ where: { id: req.params.id } });
+                req.body.articles.forEach( async article => {
+                    const newArticle = await Article.findByPk(article.id)
+                   if(!newArticle) {
+                       return res.status(400)
+                   }
+                   const oa = {
+                       outfit_id: req.params.id,
+                       article_id: article.id
+                   }
+                    console.log(oa)
+                    const outfitArticle = await OutfitArticle.update(oa, {where: { outfit_id: req.params.id }})
+               });
+               return res.status(201).json(
+                    {
+                        outfit:{
+                        updatedOutfit
+                        }
+                    }
+                )
+            }
+            
+        } catch(error) {
+            return res.status(500).send(error)
+        }
+    };
+
+    const addArticleToOutfit = async (req, res) => {
+        try {
+            const outfitWithArticles = await Outfit.findOne({
+                where: { id: req.params.outfit_id },
+                include: [Article]
+            });
+            if (outfitWithArticles.Articles.find( art => art.id===req.params.id)) {
+                 res.status(400)
+            } 
+            const article = await Article.findByPk(req.params.id)
+            await outfitWithArticles.addArticle(article)
+            // grab Article with id from req.perams.id 
+            //outfit.addArticle(_)
+            //return new outfit
+            res.json(outfitWithArticles);
+        } catch (e) {
+            res.status(400).json(e.message);
+        }
+    }
+
+    const deleteArticleFromOutfit = async (req, res) => {
+        try {
+            const outfitWithArticles = await Outfit.findOne({
+                where: { id: req.params.outfit_id },
+                include: [Article]
+            });
+            if (!outfitWithArticles.Articles.find( art => art.id===req.params.id)) {
+                res.status(400).send('Article not in outfit!');
+            } 
+            const article = await Article.findByPk(req.params.id)
+            await outfitWithArticles.removeArticle(article)
+            // grab Article with id from req.perams.id 
+            //outfit.addArticle(_)
+            //return new outfit
+            const newOutfit = await Outfit.findOne({
+                where: { id: req.params.outfit_id },
+                include: [Article]
+            });
+            res.json(newOutfit);
+        } catch (e) {
+            res.status(400).json(e.message);
+        }
+    }
+    
+
 export const closetRouter = Router()
 
 closetRouter.get("/articles", getAllArticles)
 closetRouter.get("/outfits", getAllOutfits)
 
-closetRouter.get("/articles/id/:id", getArticleById)
-closetRouter.get("/outfits/id/:id", getOutfitById)
+closetRouter.get("/articles/:id", getArticleById)
+closetRouter.get("/outfits/:id", getOutfitById)
 
-closetRouter.get("/articles/name/:name", getArticleByName)
-closetRouter.get("/outfits/name/:name", getOutfitByName)
+closetRouter.get("/articles/:name", getArticleByName)
+closetRouter.get("/outfits/:name", getOutfitByName)
 
 closetRouter.post("/articles", createArticle)
 closetRouter.post("/outfits", createOutfit)
+
+closetRouter.put("/articles/:id", updateArticle)
+closetRouter.put("/outfits/:id", updateOutfit)
+
+closetRouter.put("/outfits/:outfit_id/articles/add/:id", addArticleToOutfit);
+closetRouter.put("/outfits/:outfit_id/articles/remove/:id", deleteArticleFromOutfit);
+
 
 // const getAllHats = async (
 //     /** @type {express.Request} */  req,    // <-the type annotation for the request argument
