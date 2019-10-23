@@ -1,6 +1,6 @@
 import express from 'express' // <- this import is special for this file
 import { Router } from 'express'
-import { Hat, Shirt, Article, Outfit } from './models'
+import { Hat, Shirt, Article, Outfit, OutfitArticle } from './models'
 
 const getAllArticles = async (
         /** @type {express.Request} */  req,    // <-the type annotation for the request argument
@@ -34,44 +34,120 @@ const getAllOutfits = async (
             }
         }
 
-        const getArticleById = async (req,res) => {
-                try {
-                    const id = req.params.id;
-                    const article = await Article.findAll({
-                        where: {id: id}
-                    })
-                    if (article) {
-                        return res.status(200).json({article})
-                    }
-                    return res.status(404).send('Article with the specified ID does not exists');
-                } catch(error) {
-                    return res.status(500).send(error.message)
-                }
+const getArticleById = async (req,res) => {
+        try {
+            const id = req.params.id;
+            const article = await Article.findAll({
+                where: {id: id}
+            })
+            if (article) {
+                return res.status(200).json({article})
             }
-            
-            const getOutfitById = async (req,res) => {
-                try {
-                    const id = req.params.id;
-                    console.log(id);
-                    
-                    const outfit = await Outfit.findOne(
-                        {
-                            where: {id: parseInt(id)},
-                            include: [
-                                {
-                                    model: Article
-                                }
-                            ]
-                        }
-                )
-                    if (outfit) {
-                        return res.status(200).json({outfit})
+            return res.status(404).send('Article with the specified ID does not exists');
+        } catch(error) {
+            return res.status(500).send(error.message)
+        }
+    }
+    
+const getOutfitById = async (req,res) => {
+    try {
+        const id = req.params.id;
+        console.log(id);
+        
+        const outfit = await Outfit.findOne(
+            {
+                where: {id: parseInt(id)},
+                include: [
+                    {
+                        model: Article
                     }
-                    return res.status(404).send('Outfit with the specified ID does not exists');
-                } catch(error) {
-                    return res.status(500).send(error.message)
-                }
+                ]
             }
+    )
+        if (outfit) {
+            return res.status(200).json({outfit})
+        }
+        return res.status(404).send('Outfit with the specified ID does not exists');
+    } catch(error) {
+        return res.status(500).send(error.message)
+    }
+}
+
+const getArticleByName = async (req,res) => {
+    try {
+        const name = req.params.name;
+        const article = await Article.findAll({
+            where: {name: name}
+        })
+        if (article) {
+            return res.status(200).json({article})
+        }
+        return res.status(404).send('Article with the specified ID does not exists');
+    } catch(error) {
+        return res.status(500).send(error.message)
+    }
+}
+
+const getOutfitByName = async (req,res) => {
+try {
+    const name = req.params.name;
+    console.log(name);
+    
+    const outfit = await Outfit.findOne(
+        {
+            where: {name: name},
+            include: [
+                {
+                    model: Article
+                }
+            ]
+        }
+)
+    if (outfit) {
+        return res.status(200).json({outfit})
+    }
+    return res.status(404).send('Outfit with the specified ID does not exists');
+} catch(error) {
+    return res.status(500).send(error.message)
+}
+}
+
+const createArticle = async (req, res) => {
+        try {
+            const article = await Article.create(req.body)
+            return res.status(201).json({new:{
+                article
+            }})
+        } catch(error) {
+            return res.status(500).send(error.message)
+        }
+    }
+    
+const createOutfit = async (req, res) => {
+    try {
+        const outfit = await Outfit.create(req.body)
+        // const articles = await Article.findAll()
+        req.body.articles.forEach( async article => {
+             const newArticle = await Article.findByPk(article.id)
+            if(!newArticle) {
+                return res.status(400)
+            }
+
+            const oa = {
+                outfit_id: outfit.id,
+                article_id: article.id
+            }
+            console.log(oa)
+        const outfitArticle = await OutfitArticle.create(oa)
+        });
+        return res.status(201).json({new:{
+            outfit
+        }})
+    } catch(error) {
+        return res.status(500).send(error)
+    }
+}
+
 export const closetRouter = Router()
 
 closetRouter.get("/articles", getAllArticles)
@@ -79,6 +155,12 @@ closetRouter.get("/outfits", getAllOutfits)
 
 closetRouter.get("/articles/id/:id", getArticleById)
 closetRouter.get("/outfits/id/:id", getOutfitById)
+
+closetRouter.get("/articles/name/:name", getArticleByName)
+closetRouter.get("/outfits/name/:name", getOutfitByName)
+
+closetRouter.post("/articles", createArticle)
+closetRouter.post("/outfits", createOutfit)
 
 // const getAllHats = async (
 //     /** @type {express.Request} */  req,    // <-the type annotation for the request argument

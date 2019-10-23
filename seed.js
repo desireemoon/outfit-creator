@@ -81,8 +81,6 @@ const seedTest = async () => {
     // const articelIds = [1,2,3]
     // await firstOutfit.s
     
-
-    
     const firstOA = await OutfitArticle.create({
         article_id :  1,
         outfit_id: 1
