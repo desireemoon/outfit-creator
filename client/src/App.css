@@ -13,11 +13,13 @@
   position: fixed;
 }
 .title {
-  background-image: url("./images/18219.jpg");
+  padding: 50 px;
 }
 .home-link {
+  font-size: 28px;
   text-align: center;
   text-decoration: none;
+  color: black;
 }
 .nav-bar {
   display: flex;
