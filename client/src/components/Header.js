@@ -19,9 +19,9 @@ class Header extends Component {
       }
     })
   }
-  componentWillUnmount = async () => {
-    window.removeEventListener('scroll');
-  }
+  // componentWillUnmount = async () => {
+  //   window.removeEventListener('scroll');
+  // }
   showDropdownMenu = (event) => {
     event.preventDefault();
     this.setState({ displayMenu: !this.state.displayMenu });

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
-import { useHistory } from "react-router-dom";
 
 
 
@@ -18,11 +17,10 @@ class CreateItem extends Component {
             brand: "",
             url: "",
             imgUrl: ""
-
+            
         }
         this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
-
     }
 
     onChange(e) {
@@ -32,17 +30,13 @@ class CreateItem extends Component {
             [name]: value
         })
     }
-
+    
     async onSubmit(e) {
         e.preventDefault()
         console.log("checking state:", this.state);
         //   update route of axios call
         let response = await axios.post(`/api/articles`, this.state)
         console.log("checking response:",response);
-        if(response) {
-            return
-        }
-
     }
 
     render() {

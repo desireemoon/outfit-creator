@@ -24,7 +24,6 @@ class ItemList extends Component {
   render() {
     return (
       <div>
-
         {this.state.articles.map(article => {
           return <div className="article-containers"> 
             <Link to={ (location) => {

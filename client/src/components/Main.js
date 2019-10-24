@@ -31,7 +31,14 @@ function Main() {
             )
         }}
         />
-        <Route exact path='/outfits/:id' component={OutfitDetail} />
+        <Route exact path='/outfits/:id'        render={ routeProps => {
+          const {location, match, history} = routeProps
+          const { outfit } = location
+            return(
+              <OutfitDetail  {...{ outfit}}/>
+            )
+        }}
+        />
         <Route component={NotFound} />
       </Switch>
     </div>
