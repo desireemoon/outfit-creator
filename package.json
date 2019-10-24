@@ -6,6 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run server",
+    "start-live": "node index.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
     "babel-server": "babel-node ./server.js",
     "server": "babel-watch ./server.js",
     "resetdb": "babel-node ./resetDb.js",
