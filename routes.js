@@ -115,9 +115,9 @@ try {
 const createArticle = async (req, res) => {
         try {
             const article = await Article.create(req.body)
-            return res.status(201).json({new:{
+            return res.status(201).json({
                 article
-            }})
+            })
         } catch(error) {
             return res.status(500).send(error.message)
         }
@@ -140,9 +140,9 @@ const createOutfit = async (req, res) => {
             console.log(oa)
         const outfitArticle = await OutfitArticle.create(oa)
         });
-        return res.status(201).json({new:{
+        return res.status(201).json({
             outfit
-        }})
+        })
     } catch(error) {
         return res.status(500).send(error)
     }
@@ -155,7 +155,7 @@ const updateArticle = async (req,res) => {
             });
             if (updated) {
                 const updatedArticle = await Article.findOne({ where: { id: req.params.id } });
-                return res.status(200).json({ article: updatedArticle });
+                return res.status(200).json({ updatedArticle });
             }
             throw new Error('Item not found');
         } catch (error) {
