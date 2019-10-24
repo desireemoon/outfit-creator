@@ -32,7 +32,7 @@ class CreateItem extends Component {
         e.preventDefault()
         console.log("checking state:", this.state);
         //   update route of axios call
-        let response = await axios.post(`/articles`, this.state)
+        let response = await axios.post(`/api/articles`, this.state)
         console.log("checking response:",response);
 
     }
