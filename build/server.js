@@ -23,6 +23,7 @@ app.get("/test", (req, res) => {
   });
 });
 app.use(_express.default.static(path.join(__dirname, 'client/build')));
+app.use('/static', _express.default.static(path.join(__dirname, 'client/build/static')));
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
