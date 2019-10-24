@@ -8,6 +8,11 @@
   
 }
 
+.article-containers {
+  background: #f9f9f9;
+  padding: 5px;
+  
+}
 .title {
   background-image: url("./images/18219.jpg");
 }
@@ -98,3 +103,4 @@
 }
 
 }
+

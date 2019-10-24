@@ -46,7 +46,7 @@ class CreateItem extends Component {
                 </div>
 
                 <div className="form-containers">
-                    <label htmlFor="name">Creator:</label>
+                    <label htmlFor="creator">Creator:</label>
                     <input type="text" name="creator" value={this.state.creator} required />
                 </div>
 
