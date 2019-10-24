@@ -1,6 +1,8 @@
 .App {
   text-align: center;
-
+}
+.title {
+  margin-top: 0;
 }
 .header {
   background-image: url("./images/18219.jpg");
@@ -44,34 +46,6 @@
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
-
-@media only screen and (min-width: 375px) {
-  .main-container{
-    background-image: url("https://files.slack.com/files-pri/T0351JZQ0-FPCJ4CYRZ/best-closet-organizer-for-shoes-wood-shelves-home-depot-organizers-hanging-rod-ideas-pictures-and-rods-storage-metal-white-linen-walk-gym-clothes-purses-bedroom-design.jpeg");
-    background-size: cover;
-    height: 500px;
-    width: auto;
-    max-width: none;
-    /* margin-left: auto;
-    margin-right: auto;
-    resize: center; */
-    margin-left: -137px; 
-  }
-
-  .home-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .home-title {
-    color: pink;
-    text-align: center;
-  }
-
-
-}
-
 .dropdown-content div {
   float: none;
   color: black;
@@ -80,4 +54,3 @@
   display: block;
   text-align: left;
 }
-
