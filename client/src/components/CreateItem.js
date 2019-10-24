@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { useHistory } from "react-router-dom";
+
+
 
 class CreateItem extends Component {
     constructor(props) {
@@ -34,6 +39,9 @@ class CreateItem extends Component {
         //   update route of axios call
         let response = await axios.post(`/api/articles`, this.state)
         console.log("checking response:",response);
+        if(response) {
+            return
+        }
 
     }
 
@@ -91,7 +99,7 @@ class CreateItem extends Component {
                 <div className="form-containers">
                     <label htmlFor="url">Image Url:</label>
                     <input type="text" name="imgUrl" value={this.state.imgUrl} required />
-                    <input type="submit" onClick={this.onSubmit} />
+                    <input type="submit" onClick={this.onSubmit}/>
                 </div>
             </form>
         );
