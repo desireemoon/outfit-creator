@@ -3,14 +3,24 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.OutfitArticle = exports.Outfit = exports.Article = void 0;
+exports.OutfitArticle = exports.Outfit = exports.Article = exports.sequelize = void 0;
 
 var _sequelize = require("sequelize");
 
-const sequelize = new _sequelize.Sequelize({
+const sequelize = process.env.DATABASE_URL === undefined || process.env.DATABASE_URL === null ? new _sequelize.Sequelize({
   database: "closet_db_development",
+  username: "postgres",
+  password: "postgres",
   dialect: "postgres"
+}) : new _sequelize.Sequelize(process.env.DATABASE_URL, {
+  protocol: "postgres",
+  dialect: "postgres",
+  logging: true,
+  dialectOptions: {
+    ssl: true
+  }
 });
+exports.sequelize = sequelize;
 
 class Article extends _sequelize.Model {}
 
