@@ -12,6 +12,7 @@
 .scrolled {
   position: fixed;
 }
+
 .title {
   padding: 50 px;
 }
@@ -101,4 +102,5 @@
     color:aqua;
   
   }
+
 }

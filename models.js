@@ -1,10 +1,22 @@
 import { Model, DataTypes, Sequelize } from 'sequelize'
 
-const sequelize = new Sequelize(
-    {   database: "closet_db_development",
+export const sequelize =
+    (process.env.DATABASE_URL === undefined || process.env.DATABASE_URL === null) 
+    ? new Sequelize ({
+        database: "closet_db_development",
+        username: "postgres",
+        password:"postgres",
         dialect: "postgres"
-    }
-)
+    })
+    : new Sequelize(
+        process.env.DATABASE_URL,{
+            protocol:"postgres",
+            dialect: "postgres",
+            logging:true,    
+            dialectOptions: {
+                ssl: true
+            }
+    })
 
 export class Article extends Model {}
 Article.init(

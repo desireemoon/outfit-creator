@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { useHistory } from "react-router-dom";
+
+
 
 class CreateItem extends Component {
     constructor(props) {
@@ -32,8 +37,11 @@ class CreateItem extends Component {
         e.preventDefault()
         console.log("checking state:", this.state);
         //   update route of axios call
-        let response = await axios.post(`/articles`, this.state)
+        let response = await axios.post(`/api/articles`, this.state)
         console.log("checking response:",response);
+        if(response) {
+            return
+        }
 
     }
 
@@ -46,7 +54,7 @@ class CreateItem extends Component {
                 </div>
 
                 <div className="form-containers">
-                    <label htmlFor="name">Creator:</label>
+                    <label htmlFor="creator">Creator:</label>
                     <input type="text" name="creator" value={this.state.creator} required />
                 </div>
 
@@ -91,7 +99,7 @@ class CreateItem extends Component {
                 <div className="form-containers">
                     <label htmlFor="url">Image Url:</label>
                     <input type="text" name="imgUrl" value={this.state.imgUrl} required />
-                    <input type="submit" onClick={this.onSubmit} />
+                    <input type="submit" onClick={this.onSubmit}/>
                 </div>
             </form>
         );
