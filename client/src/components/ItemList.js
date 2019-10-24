@@ -23,10 +23,11 @@ class ItemList extends Component {
 
   render() {
     return (
-      <div>
+      <div className="article-list-container">
 
         {this.state.articles.map(article => {
-          return <div className="article-containers"> 
+          return <div className="article-container-one"> 
+          <div className="article-container-two">
             <Link to={ (location) => {
               return {
                 ...location,
@@ -36,6 +37,7 @@ class ItemList extends Component {
             } }
               
              key={article.id} article={article}>{article.name}</Link> 
+          </div>
           </div>
         })}
 

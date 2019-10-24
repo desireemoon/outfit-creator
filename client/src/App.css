@@ -15,6 +15,7 @@
 }
 .title {
   background-image: url("./images/18219.jpg");
+  color: brown
 }
 .home-link {
   text-align: center;
@@ -87,6 +88,33 @@
     margin: 0 -70px 175px 100px;
   }
 
+  .article-list-container{
+    display: inline-flex;
+    justify-content: space-evenly;
+    /* background-color: green; */
+    margin: 0 0 0 -32px;
+    height: 150px;
+    width: 400px;
+    overflow: scroll;
+
+  }
+
+  .article-container-two {
+    background-color: rgba(128, 128, 128, 0.8);
+    
+    padding: 10px;
+    border-radius: 25px;
+    border: 2px solid #3F334D;
+    align-items: center;
+    text-align: center;
+    
+  }
+
+  a {
+    text-decoration: none;
+    color: whitesmoke;
+  }
+  
 
   .home-title {
     color:aqua;
@@ -101,6 +129,25 @@
   display: block;
   text-align: left;
 }
+
+.footer-container {
+  background-color: #333;
+  padding: 5px;
+}
+
+.footer {
+  color: whitesmoke;
+  display: inline-block;
+  width: 400px;
+  text-align: center;
+  margin: 0 0 0 -30px;
+  padding: 0  10px 0;
+  
+}
+
+
+
+
 
 }
 
