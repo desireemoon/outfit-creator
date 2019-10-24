@@ -25,6 +25,12 @@ class Header extends Component {
   showDropdownMenu = (event) => {
     event.preventDefault();
     this.setState({ displayMenu: !this.state.displayMenu });
+    document.addEventListener('click', this.closeMenu);
+  }
+  closeMenu = () => {
+    this.setState({ displayMenu: false }, () => {
+      document.removeEventListener('click', this.closeMenu);
+    });
   }
   render() {
     return (
@@ -33,7 +39,7 @@ class Header extends Component {
           <h1 className="title">Outfit Creator</h1>
         </Link>
         <div className="nav-bar">
-          <Link className="nav-link" to="/clothing">
+          <Link className="nav-link" to="/clothing"> 
             <div className="link-button">Clothing</div>
           </Link>
           <Link className="nav-link" to="/outfits">

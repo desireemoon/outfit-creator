@@ -7,10 +7,10 @@
 .header {
   /* background-image: url("./images/18219.jpg"); */
   width: 100%;
+  transition: 0.25s;
 }
 .scrolled {
   position: fixed;
-  transition: 0.25s;
 }
 .title {
   background-image: url("./images/18219.jpg");
