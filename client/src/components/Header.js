@@ -5,17 +5,30 @@ class Header extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      scrolled: false,
       displayMenu: false,
     };
-    this.showDropdownMenu = this.showDropdownMenu.bind(this);
   }
-  showDropdownMenu(event) {
-  event.preventDefault();
-  this.setState({ displayMenu: !this.state.displayMenu });
+  componentDidMount = async () => {
+    window.addEventListener('scroll', () => {
+      const top = window.scrollY < 100;
+      if (top !== true) {
+        this.setState({scrolled: true})
+      } else {
+        this.setState({scrolled: false})
+      }
+    })
+  }
+  componentWillUnmount = async () => {
+    window.removeEventListener('scroll');
+  }
+  showDropdownMenu = (event) => {
+    event.preventDefault();
+    this.setState({ displayMenu: !this.state.displayMenu });
   }
   render() {
     return (
-      <div className="header">
+      <div className= {this.state.scrolled ? 'header scrolled' : 'header'}>
         <Link className="home-link" to="/">
           <h1 className="title">Outfit Creator</h1>
         </Link>

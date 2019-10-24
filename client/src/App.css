@@ -6,10 +6,12 @@
 }
 .header {
   /* background-image: url("./images/18219.jpg"); */
-  height: 100px;
-  
+  width: 100%;
 }
-
+.scrolled {
+  position: fixed;
+  transition: 0.25s;
+}
 .title {
   background-image: url("./images/18219.jpg");
 }
@@ -51,6 +53,14 @@
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
+.dropdown-content div {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
 
 @media only screen and (min-width: 375px) {
   .header {
@@ -89,12 +99,4 @@
     color:aqua;
   
   }
-}
-.dropdown-content div {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
 }
