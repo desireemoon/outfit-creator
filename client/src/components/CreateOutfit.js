@@ -10,17 +10,22 @@ class CreateOutfit extends Component {
             // UPDATE STATE WHEN BACKEND IS FINISHED
             name: "",
             creator: "",
-            articleIds: [],
-            articles: []
+            articles: [],
+            articleId: []
         }
+    
     }
+
+    
     componentDidMount = async () => {
         // update route for axios call
         let response = await Axios.get("/api/articles")
         console.log(`loggin the response`, response.data.articles)
         this.setState({
-          articles: response.data.articles
+          articleId: response.data.articles
         })
+        
+        
       }
     onChange = (e) => {
         // UPDATE THIS WHEN STATE IS DECIDED ON
@@ -34,19 +39,20 @@ class CreateOutfit extends Component {
     }
     onSubmit = async (e) => {
         e.preventDefault()
-
+        console.log("checking all states", this.state.name, this.state.creator, this.state.articles );
+        console.log("state as a whole", this.state);
         // UPDATE API ADDRESS WHEN BACKEND IS COMPLETE
-        let response = await Axios.post(`/outfits`, this.state.name, this.state.creator, this.state.articleIds)
+        let response = await Axios.post(`/api/outfits`, this.state)
         console.log(response)
     }
     handleClick = (id) => {
         this.setState({
-            articleIds: this.state.articleIds.concat({'id': id})
+            articles: this.state.articles.concat({'id': id})
         })
-        console.log("handleClick logging article ids 2", this.state.articleIds)
-        if (this.state.articleIds.includes({'id': id.id})) {
-            return 
-        }
+        console.log("handleClick logging article ids 2", this.state.articles)
+        // if (this.state.articles.includes({'id': id.id})) {
+        //     return 
+        // }
     }
     render() {
         return (
@@ -66,11 +72,11 @@ class CreateOutfit extends Component {
                 </div>
 
                 <div className="create-outfit-item-list">
-                    {this.state.articles.map(article => {
+                    {this.state.articleId.map(article => {
                         return(
                             <div className="article-containers"> 
                                 <p>{article.name}</p>
-                                {this.state.articleIds.includes({'id': article.id}) ?
+                                {this.state.articles.includes({'id': article.id}) ?
                                 <button>Remove</button> : <button value="Add" onClick={() => this.handleClick(article.id)}></button>}
                             </div>
                         )
