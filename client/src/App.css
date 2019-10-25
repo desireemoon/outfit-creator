@@ -5,6 +5,7 @@
 }
 .title {
   margin-top: 0;
+  margin-bottom: 0;
 }
 .header {
   /* background-image: url("./images/18219.jpg"); */
@@ -20,7 +21,9 @@
 .title {
 
   background-image: url("./images/18219.jpg");
-  color: brown
+  color: brown;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+  
 }
 .home-link {
   font-size: 28px;
@@ -71,6 +74,146 @@
   text-align: left;
 }
 
+
+.main-container{
+  background-image: url("https://files.slack.com/files-pri/T0351JZQ0-FPCJ4CYRZ/best-closet-organizer-for-shoes-wood-shelves-home-depot-organizers-hanging-rod-ideas-pictures-and-rods-storage-metal-white-linen-walk-gym-clothes-purses-bedroom-design.jpeg");  
+  background-size: cover;
+  height: 600px;
+  width: auto;
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+  resize: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .main {
+  
+  margin: 0 -70px 175px 100px;
+} */
+
+.article-list-container{
+  display: inline-flex;
+  justify-content: space-evenly;
+  /* background-color: green; */
+  /* margin: 0 0 0 -32px; */
+  height: 150px;
+  width: 400px;
+  overflow-y: scroll;
+
+}
+
+.article-container-two {
+  background-color: rgba(128, 128, 128, 0.8);
+  padding: 10px;
+  border-radius: 25px;
+  border: 2px solid #3F334D;
+  align-items: center;
+  text-align: center;
+  
+}
+
+a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+
+
+
+.home-title {
+  color: #F0F4B5;
+  font-family: cursive;
+  margin: 0 0 0 -35px;
+  font-size: 100px;
+
+}
+
+
+
+
+.contains-form {
+background-color: rgba(128, 128, 128, 0.8);
+border: 2px solid #3F334D;
+border-radius: 25px;
+padding: 15px;
+display: inline-block;
+margin: 0 130px 0 -30px; 
+
+/* width: 50%; */
+
+}
+
+input {
+background-color: rgba(128, 128, 128, 0.8) ;
+border: 2px solid rgba(56, 27, 85, 0.4);
+border-radius: 25px;
+
+}
+
+select {
+color: whitesmoke;
+background-color:rgba(56, 27, 85, 0.4);
+overflow: hidden;
+}
+
+
+label {
+color: whitesmoke;
+
+}
+
+.item-button {
+color: whitesmoke;
+background-color:rgba(56, 27, 85, 0.4);
+}
+
+.create-outfit-component {
+background-color: rgba(128, 128, 128, 0.8);
+padding: 10px;
+border-radius: 25px;
+border: 2px solid #3F334D;
+align-items: center;
+text-align: center;
+margin: 120px 140px 0 -30px;
+width: 330px;
+height: 280px;
+
+/* add: overflow: scroll */
+}
+
+.create-title {
+color: whitesmoke
+}
+
+.footer-container {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: #333;
+padding: 0px 0px 30px 0px;
+text-align: center;
+
+}
+
+.footer {
+color: whitesmoke;
+display: inline-block;
+width: 400px;
+
+margin: 0 0 0 -30px;
+padding: 0  10px 0;
+
+}
+
+
+
+
+@media only screen and (max-width: 375px) {
+
 .main {
   padding: 20px 10px;
   min-height: 68vh;
@@ -98,7 +241,7 @@
     margin-left: auto;
     margin-right: auto;
     resize: center; 
-    margin-left: -137px; 
+    margin-left: -137px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -116,7 +259,7 @@
     margin: 0 0 0 -32px;
     height: 150px;
     width: 400px;
-    overflow: scroll;
+    overflow-y: scroll;
 
   }
 
@@ -131,7 +274,6 @@
 
   .article-container-two {
     background-color: rgba(128, 128, 128, 0.8);
-    
     padding: 10px;
     border-radius: 25px;
     border: 2px solid #3F334D;
@@ -144,13 +286,17 @@
     text-decoration: none;
     color: whitesmoke;
   }
+
+
   
 
   .home-title {
-    color:aqua;
+    color: #F0F4B5;
+    font-family: cursive;
+    margin: 0 0 0 -35px;
+    font-size: 100px;
   
   }
-}
 
 
 .contains-form {
@@ -159,24 +305,77 @@
   border-radius: 25px;
   padding: 10px;
   display: inline-block;
+  margin: 0 0 0 -30px;
 
 }
 
 input {
   background-color: rgba(128, 128, 128, 0.8) ;
-  border: 2px solid #3F334D;
+  border: 2px solid rgba(56, 27, 85, 0.4);
   border-radius: 25px;
   
+}
+
+select {
+  color: whitesmoke;
+  background-color:rgba(56, 27, 85, 0.4);
+  overflow: hidden;
 }
 
 
 label {
   color: whitesmoke;
+
 }
 
 .item-button {
   color: whitesmoke;
+  background-color:rgba(56, 27, 85, 0.4);
 }
+
+.create-outfit-component {
+  background-color: rgba(128, 128, 128, 0.8);
+  padding: 10px;
+  border-radius: 25px;
+  border: 2px solid #3F334D;
+  align-items: center;
+  text-align: center;
+  margin: 0 0 0 -30px;
+  width: 330px;
+  height: 280px;
+
+/* add: overflow: scroll */
+}
+
+.create-title {
+  color: whitesmoke
+}
+
+
+/* .footer-container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 14px 0px 30px 0px;
+  text-align: center;
+  
+} */
+
+/* .footer {
+  color: whitesmoke;
+  display: inline-block;
+  width: 400px;
+  
+  margin: 0 0 0 -30px;
+  padding: 0  10px 0;
+  
+}
+ */
+}
+
+
 
 
 .footer {
@@ -189,3 +388,4 @@ label {
   background-color: #333;
 
 }
+
