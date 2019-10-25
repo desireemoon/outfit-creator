@@ -22,10 +22,10 @@ class OutfitList extends Component {
 
   render() {
     return (
-      <div>
-
+      <div className="article-list-container">
         {this.state.outfits.map(outfit => {
-          return <div className="outfit-containers"> 
+          return <div className="outfit-container1"> 
+           <div className="article-container-two">
             <Link to={ (location) => {
               return {
                 ...location,
@@ -35,6 +35,7 @@ class OutfitList extends Component {
             } }
               
              key={outfit.id} outfit={outfit}>{outfit.name}</Link> 
+          </div>
           </div>
         })}
 

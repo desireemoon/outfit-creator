@@ -16,6 +16,9 @@ const Footer = () => {
             <div class="social-links"> 
                 <a href="https://www.linkedin.com/in/kenneth-williams-0606419/">Kenneth Williams</a>    
             </div>
+            <div class="social-links"> 
+                <a href="https://git.generalassemb.ly/desireemoon/outfit-creator">Check out our README!</a>    
+            </div>
         </div>
     );
 }
