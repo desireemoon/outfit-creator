@@ -48,16 +48,21 @@ class CreateOutfit extends Component {
     render() {
         return (
             <div className="create-outfit-component">
-                <h1>Create Outfit</h1>
-
+                <div className="create-title">
+                    <h1>Create Outfit</h1>
+                </div>
                 <div className="create-form">
                     <form onChange={this.onChange}>
                         <div className="form-containers">
+                            <div>
                             <label htmlFor="name">Article Name:</label>
+                            </div>
                             <input type="text" name="name" value={this.state.name} required />
                         </div>
                         <div className="form-containers">
+                            <div>
                             <label htmlFor="creator">Creator:</label>
+                            </div>
                             <input type="text" name="creator" value={this.state.creator} required />
                         </div>
                     </form>
