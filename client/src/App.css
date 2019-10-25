@@ -85,7 +85,7 @@
 
 
 .main-container {
-  background-image: url("https://files.slack.com/files-pri/T0351JZQ0-FPCJ4CYRZ/best-closet-organizer-for-shoes-wood-shelves-home-depot-organizers-hanging-rod-ideas-pictures-and-rods-storage-metal-white-linen-walk-gym-clothes-purses-bedroom-design.jpeg");
+  background-image: url("./images/closetbackground.jpeg");
   background-size: cover;
   height: 600px;
   width: auto;
@@ -248,7 +248,7 @@ button {
 
 
     .main-container {
-      background-image: url("https://files.slack.com/files-pri/T0351JZQ0-FPCJ4CYRZ/best-closet-organizer-for-shoes-wood-shelves-home-depot-organizers-hanging-rod-ideas-pictures-and-rods-storage-metal-white-linen-walk-gym-clothes-purses-bedroom-design.jpeg");
+      background-image: url("./images/closetbackground.jpeg");
       background-size: cover;
       height: 5h00px;
       width: auto;
