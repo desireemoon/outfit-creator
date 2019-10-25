@@ -39,12 +39,12 @@ class CreateOutfit extends Component {
         let response = await Axios.post(`/outfits`, this.state.name, this.state.creator, this.state.articleIds)
         console.log(response)
     }
-    handleClick = (id) => {
+    handleClick = (id, e) => {
         this.setState({
             articleIds: this.state.articleIds.concat({'id': id})
         })
         console.log("handleClick logging article ids 2", this.state.articleIds)
-        if (this.state.articleIds.includes({'id': article.id})) {
+        if (this.state.articleIds.includes({'id': id.id})) {
             return 
         }
     }
@@ -72,7 +72,7 @@ class CreateOutfit extends Component {
                                 <p>{article.name}</p>
                                 {this.state.articleIds.includes({'id': article.id}) ?
                                 <button>Remove</button> :
-                                <button onClick={() => this.handleClick(article.id)}>Add</button>}
+                                <button value="Add" onClick={() => this.handleClick(article.id, e)}></button>}
                             </div>
                         )
                     })}
