@@ -109,6 +109,15 @@
 
   }
 
+  .article-container{
+    background-color: rgba(128, 128, 128, 0.8);
+    padding: 10px;
+    border-radius: 25px;
+    border: 2px solid #3F334D;
+    align-items: center;
+    text-align: center;
+  }
+
   .article-container-two {
     background-color: rgba(128, 128, 128, 0.8);
     
@@ -168,7 +177,7 @@ label {
   display: inline-block;
   width: 400px;
   text-align: center;
-  margin: 0 0 0 -30px;
+  margin: 0 auto;
   padding: 0  10px 0;
   
 }

@@ -34,7 +34,7 @@ function OutfitDetail(props) {
       return (<div>This will be the same code for CreateOutfit but w/ props to fill forms</div>)
     } else {
       return (
-        <>
+        <div className="article-container">
           <h1>{name}</h1>
           <p>Created by: {creator}</p>
           <div className="outfit-details-article-container">
@@ -51,7 +51,7 @@ function OutfitDetail(props) {
                 </div>
             )})}
           </div>
-        </>
+        </div>
       );
     }
   }
