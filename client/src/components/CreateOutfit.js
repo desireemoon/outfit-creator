@@ -71,8 +71,7 @@ class CreateOutfit extends Component {
                             <div className="article-containers"> 
                                 <p>{article.name}</p>
                                 {this.state.articleIds.includes({'id': article.id}) ?
-                                <button>Remove</button> :
-                                <button value="Add" onClick={() => this.handleClick(article.id, e)}></button>}
+                                <button>Remove</button>                                <button value="Add" onClick={() => this.handleClick(article.id, e)}></button>}
                             </div>
                         )
                     })}

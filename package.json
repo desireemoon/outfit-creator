@@ -2,14 +2,26 @@
   "name": "outfit-creator",
   "version": "1.0.0",
   "description": "CRUD outfit creator",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run server",
+    "start": "node build/server.js",
+    "babel-build": "npx babel ./server.js ./resetDb.js ./seed.js ./models.js ./routes.js --out-dir ./build",
+    "client-build": "cd client && npm install --only=dev && npm install && npm run build",
     "babel-server": "babel-node ./server.js",
     "server": "babel-watch ./server.js",
     "resetdb": "babel-node ./resetDb.js",
-    "seed": "babel-node ./seed.js"
+    "seed": "babel-node ./seed.js",
+    "createdevdb": "createdb -U postgres -W ",
+    "rebuild-database": "npm run resetdb && npm run seed",
+    "move-client-build": "ncp client/build build/client/build",
+    "premove-client-build": "npx make-dir build/client/build",
+    "node-server": "node ./build/server.js",
+    "build": "npm install --only=dev && npm install && npm run babel-build && npm run client-build && npm run move-client-build",
+    "node-resetdb": "node ./build/resetDb.js",
+    "node-seed": "node ./build/seed.js",
+    "node-rebuild-database": "npm run node-resetdb && npm run node-seed",
+    "postbuild": "npm run node-rebuild-database"
   },
   "repository": {
     "type": "git",
@@ -20,9 +32,15 @@
     "creator",
     "clothing"
   ],
+  "engines": {
+    "node": "12.10.0"
+  },
   "author": "Desiree deWysocki, Nathan Pezzotti, Kenneth Williams",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.7",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
@@ -33,10 +51,13 @@
     "sequelize-cli": "^5.5.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
     "@babel/node": "^7.6.3",
     "@babel/preset-env": "^7.6.3",
-    "babel-watch": "^7.0.0"
+    "babel-watch": "^7.0.0",
+    "make-dir-cli": "^2.0.0",
+    "ncp": "^2.0.0"
   },
   "babel": {
     "presets": [

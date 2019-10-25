@@ -12,16 +12,10 @@
 .scrolled {
   position: fixed;
 }
-.article-containers {
-  background: #f9f9f9;
-  padding: 5px;
-}
-.outfit-containers {
-  background: #f9f9f9;
-  padding: 5px;
-}
 .title {
-  padding: 50 px;
+
+  background-image: url("./images/18219.jpg");
+  color: brown
 }
 .home-link {
   font-size: 28px;
@@ -104,6 +98,33 @@
     margin: 0 -70px 175px 100px;
   }
 
+  .article-list-container{
+    display: inline-flex;
+    justify-content: space-evenly;
+    /* background-color: green; */
+    margin: 0 0 0 -32px;
+    height: 150px;
+    width: 400px;
+    overflow: scroll;
+
+  }
+
+  .article-container-two {
+    background-color: rgba(128, 128, 128, 0.8);
+    
+    padding: 10px;
+    border-radius: 25px;
+    border: 2px solid #3F334D;
+    align-items: center;
+    text-align: center;
+    
+  }
+
+  a {
+    text-decoration: none;
+    color: whitesmoke;
+  }
+  
 
   .home-title {
     color:aqua;
@@ -111,11 +132,43 @@
   }
 }
 
-.dropdown-content div {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
+
+.contains-form {
+  background-color: rgba(128, 128, 128, 0.8);
+  border: 2px solid #3F334D;
+  border-radius: 25px;
+  padding: 10px;
+  display: inline-block;
+
+}
+
+input {
+  background-color: rgba(128, 128, 128, 0.8) ;
+  border: 2px solid #3F334D;
+  border-radius: 25px;
+  
+}
+
+
+label {
+  color: whitesmoke;
+}
+
+.item-button {
+  color: whitesmoke;
+}
+
+.footer-container {
+  background-color: #333;
+  padding: 5px;
+}
+
+.footer {
+  color: whitesmoke;
+  display: inline-block;
+  width: 400px;
+  text-align: center;
+  margin: 0 0 0 -30px;
+  padding: 0  10px 0;
+  
 }
