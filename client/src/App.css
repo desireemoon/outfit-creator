@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+
 }
 .title {
   margin-top: 0;
@@ -8,12 +10,14 @@
 .header {
   /* background-image: url("./images/18219.jpg"); */
   width: 100%;
-  transition: 0.25s;
+  
 }
-.scrolled {
-  position: fixed;
+.header-container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background: white;
 }
-
 .title {
 
   background-image: url("./images/18219.jpg");
@@ -32,7 +36,7 @@
   justify-content: space-evenly;
   margin: 0 auto;
   /* overflow: hidden; */
-  background-color: #333;
+  background-color: #333; 
 }
 .link-button {
   float: left;
@@ -70,6 +74,7 @@
   text-align: left;
 }
 
+
 .main-container{
   background-image: url("https://files.slack.com/files-pri/T0351JZQ0-FPCJ4CYRZ/best-closet-organizer-for-shoes-wood-shelves-home-depot-organizers-hanging-rod-ideas-pictures-and-rods-storage-metal-white-linen-walk-gym-clothes-purses-bedroom-design.jpeg");  
   background-size: cover;
@@ -84,25 +89,10 @@
   align-items: center;
 }
 
-.main-container{
-  background-image: url("https://files.slack.com/files-pri/T0351JZQ0-FPCJ4CYRZ/best-closet-organizer-for-shoes-wood-shelves-home-depot-organizers-hanging-rod-ideas-pictures-and-rods-storage-metal-white-linen-walk-gym-clothes-purses-bedroom-design.jpeg");  
-  background-size: cover;
-  height: 600px;
-  width: auto;
-  max-width: none;
-  margin-left: auto;
-  margin-right: auto;
-  resize: center; 
-  /* margin-left: -137px; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.main {
+/* .main {
   
   margin: 0 -70px 175px 100px;
-}
+} */
 
 .article-list-container{
   display: inline-flex;
@@ -223,6 +213,14 @@ padding: 0  10px 0;
 
 
 @media only screen and (max-width: 375px) {
+
+.main {
+  padding: 20px 10px;
+  min-height: 68vh;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 375px) {
   .header {
     /* background-image: url("./images/18219.jpg"); */
     height: 100px;
@@ -237,7 +235,7 @@ padding: 0  10px 0;
   .main-container{
     background-image: url("https://files.slack.com/files-pri/T0351JZQ0-FPCJ4CYRZ/best-closet-organizer-for-shoes-wood-shelves-home-depot-organizers-hanging-rod-ideas-pictures-and-rods-storage-metal-white-linen-walk-gym-clothes-purses-bedroom-design.jpeg");  
     background-size: cover;
-    height: 500px;
+    height: 5h00px;
     width: auto;
     max-width: none;
     margin-left: auto;
@@ -250,8 +248,8 @@ padding: 0  10px 0;
   }
 
   .main {
-    
-    margin: 0 -70px 175px 100px;
+    min-height: 68vh;
+    margin: 0 auto;
   }
 
   .article-list-container{
@@ -263,6 +261,15 @@ padding: 0  10px 0;
     width: 400px;
     overflow-y: scroll;
 
+  }
+
+  .article-container{
+    background-color: rgba(128, 128, 128, 0.8);
+    padding: 10px;
+    border-radius: 25px;
+    border: 2px solid #3F334D;
+    align-items: center;
+    text-align: center;
   }
 
   .article-container-two {
@@ -290,8 +297,6 @@ padding: 0  10px 0;
     font-size: 100px;
   
   }
-
-
 
 
 .contains-form {
@@ -346,7 +351,8 @@ label {
   color: whitesmoke
 }
 
-.footer-container {
+
+/* .footer-container {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -355,9 +361,9 @@ label {
   padding: 14px 0px 30px 0px;
   text-align: center;
   
-}
+} */
 
-.footer {
+/* .footer {
   color: whitesmoke;
   display: inline-block;
   width: 400px;
@@ -366,13 +372,20 @@ label {
   padding: 0  10px 0;
   
 }
-
+ */
 }
 
 
 
 
+.footer {
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #333;
 
-
-
+}
 

@@ -4,8 +4,6 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import ItemList from './ItemDetails';
 import { Link } from 'react-router-dom';
 
-
-
 function ItemDetails(props) {
   const [flipped, setFlipped] = useState(false)
   const [name, setName] = useState(props.article.name)
@@ -57,7 +55,6 @@ function ItemDetails(props) {
     // axios for be something like "this.props.params"
     let deleted = await axios.delete(`/api/articles/${props.article.id}`)
     console.log(deleted)
-    // return <Redirect to={`/clothing`} />
 
 
   }
@@ -130,7 +127,7 @@ function ItemDetails(props) {
         <>
           <h1><a href={url}>{name}</a></h1>
           <img src={imgUrl} alt={name} />
-          <p>Creted by: {creator}</p>
+          <p>Created by: {creator}</p>
           <p>Article Type: {type}</p>
           <p>Brand: {brand}</p>
           <p>Color: {color}</p>

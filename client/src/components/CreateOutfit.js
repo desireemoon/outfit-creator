@@ -11,17 +11,22 @@ class CreateOutfit extends Component {
             name: "",
             creator: "",
             articles: [],
+            articleId: []
         }
-
-
-        // "name": "Kenneth's outfit",
-        //     "creator": "Kenneth",
-        //     "articles": [
-        //     	{"id": 1},
-        //     	{"id": 2},
-        //     	{"id": 6}
-        //     	]
+    
     }
+
+    
+    componentDidMount = async () => {
+        // update route for axios call
+        let response = await Axios.get("/api/articles")
+        console.log(`loggin the response`, response.data.articles)
+        this.setState({
+          articleId: response.data.articles
+        })
+        
+        
+      }
     onChange = (e) => {
         // UPDATE THIS WHEN STATE IS DECIDED ON
         const { name, value } = e.target;
@@ -34,20 +39,25 @@ class CreateOutfit extends Component {
     }
     onSubmit = async (e) => {
         e.preventDefault()
+        console.log("checking all states", this.state.name, this.state.creator, this.state.articles );
+        console.log("state as a whole", this.state);
         // UPDATE API ADDRESS WHEN BACKEND IS COMPLETE
-        let response = await Axios.post(``, this.state)
+        let response = await Axios.post(`/api/outfits`, this.state)
         console.log(response)
     }
-
-    Article = (id) => {
-        this.id = id;
-      }
-      
-    // const sei = new Cohort('SEI Cicadas NYC', 29);
-
+    handleClick = (id) => {
+        this.setState({
+            articles: this.state.articles.concat({'id': id})
+        })
+        console.log("handleClick logging article ids 2", this.state.articles)
+        // if (this.state.articles.includes({'id': id.id})) {
+        //     return 
+        // }
+    }
     render() {
         return (
             <div className="create-outfit-component">
+
                 <div className="create-title">
                     <h1>Create Outfit</h1>
                 </div>
@@ -57,6 +67,13 @@ class CreateOutfit extends Component {
                             <div>
                             <label htmlFor="name">Article Name:</label>
                             </div>
+
+//                 <h1>Create Outfit</h1>
+//                 <div className="create-form">
+//                     <form onChange={this.onChange}>
+//                         <div className="form-containers">
+//                             <label htmlFor="name">Name:</label>
+
                             <input type="text" name="name" value={this.state.name} required />
                         </div>
                         <div className="form-containers">
@@ -69,18 +86,20 @@ class CreateOutfit extends Component {
                 </div>
 
                 <div className="create-outfit-item-list">
-                    <ItemList />
+                    {this.state.articleId.map(article => {
+                        return(
+                            <div className="article-containers"> 
+                                <p>{article.name}</p>
+                                {this.state.articles.includes({'id': article.id}) ?
+                                <button>Remove</button> : <button value="Add" onClick={() => this.handleClick(article.id)}></button>}
+                            </div>
+                        )
+                    })}
+                <button type="submit" onClick={this.onSubmit}>Submit</button>
                 </div>
-
             </div>
         )
     }
 }
 
 export default CreateOutfit
-
-
-// grab name in string
-// grab creator in string
-// grab article id(integer) in object
-// put id object into article array 

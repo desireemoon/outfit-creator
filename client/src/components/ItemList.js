@@ -24,7 +24,6 @@ class ItemList extends Component {
   render() {
     return (
       <div className="article-list-container">
-
         {this.state.articles.map(article => {
           return <div className="article-container-one"> 
           <div className="article-container-two">
