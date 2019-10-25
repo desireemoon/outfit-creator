@@ -22,11 +22,12 @@ app.get("/test", (req, res) => {
     greetings: "we're cooking with GAS!!! o(*￣▽￣*)ブ"
   });
 });
-app.use(_express.default.static(path.join(__dirname, 'client/build')));
-app.use('/static', _express.default.static(path.join(__dirname, 'client/build/static')));
+app.use(_express.default.static(path.join(__dirname, '/client/build')));
+app.use('/static', _express.default.static(path.join(__dirname, '/client/build/static')));
+app.use('/images', _express.default.static(path.join(__dirname, '/client/build/images/')));
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/client/build/index.html'));
+  res.sendFile(path.join(__dirname, '/client/build/index.html'));
 });
-const PORT = 3636;
+const PORT = +process.env.PORT || 3636;
 app.listen(PORT);
 console.log('hand-rolled express server listening on Port ::', PORT);
