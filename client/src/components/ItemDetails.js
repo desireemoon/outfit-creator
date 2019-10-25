@@ -124,7 +124,7 @@ function ItemDetails(props) {
       </>)
     } else {
       return (
-        <>
+        <div className="article-container">
           <h1><a href={url}>{name}</a></h1>
           <img src={imgUrl} alt={name} />
           <p>Created by: {creator}</p>
@@ -133,7 +133,7 @@ function ItemDetails(props) {
           <p>Color: {color}</p>
           <p>Fabric: {fabric}</p>
           {/* <button onClick={props.onClickEdit}><Link className="nav-link" to="/clothing">Edit</Link></button> */}
-        </>
+        </div>
       );
     }
   }
