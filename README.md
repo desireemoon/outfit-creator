@@ -5,6 +5,8 @@ outfit-creator
 
 # Project Overview
 
+Link: https://outfit-creator.herokuapp.com/
+
 ## Project Description
 
 Responsive app that catalogues CRUD clothing items and allows you to CRUD outfits.
