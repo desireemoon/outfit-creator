@@ -1,31 +1,24 @@
 .App {
   text-align: center;
   min-height: 100vh;
-
+  margin: 0 auto;
 }
 
-.title {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
+/* header section */
 .header {
-  /* background-image: url("./images/18219.jpg"); */
   width: 100%;
-
 }
 
 .header-container {
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
   background: white;
 }
 
 .title {
   background-image: url("./images/18219.jpg");
   color: brown;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .home-link {
@@ -38,8 +31,7 @@
 .nav-bar {
   display: flex;
   justify-content: space-evenly;
-  margin: 0 auto;
-  /* overflow: hidden; */
+  
   background-color: #333;
 }
 
@@ -62,7 +54,6 @@
   outline: none;
   color: white;
   padding: 14px 16px;
-  margin: 0;
 }
 
 .dropdown-content {
@@ -83,27 +74,22 @@
   text-align: left;
 }
 
-
-.main-container {
+.main {
+  padding: 20px 10px;
+  min-height: 68vh;
   background-image: url("./images/closetbackground.jpeg");
   background-size: cover;
-  height: 600px;
+  background-position: center;
   width: auto;
-  max-width: none;
-  margin-left: auto;
-  margin-right: auto;
-  resize: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
-
 .article-list-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+
 }
 
 .article-container-two {
@@ -113,7 +99,6 @@
   border: 2px solid #3F334D;
   align-items: center;
   text-align: center;
-
 }
 
 a {
@@ -121,30 +106,19 @@ a {
   color: whitesmoke;
 }
 
-
-
-
 .home-title {
-  color: #F0F4B5;
+  color: rgb(219, 204, 118);
   font-family: cursive;
-  margin: 0 0 0 -35px;
+  text-shadow: 5px 2px black;
   font-size: 100px;
-
+  
 }
-
-
-
 
 .contains-form {
   background-color: rgba(128, 128, 128, 0.8);
   border: 2px solid #3F334D;
   border-radius: 25px;
   padding: 15px;
-  display: inline-block;
-  /* margin: 0 130px 0 -30px; */
-
-  /* width: 50%; */
-
 }
 
 input {
@@ -176,8 +150,8 @@ label {
   padding: 10px 30px;
   border-radius: 25px;
   border: 2px solid #3F334D;
-  /* align-items: center;
-  text-align: center; */
+  align-items: center;
+  text-align: center;
 }
 
 .create-outfit-component {
@@ -187,11 +161,9 @@ label {
   border: 2px solid #3F334D;
   align-items: center;
   text-align: center;
-  /* margin: 120px 140px 0 -30px; */
   width: 330px;
   height: 280px;
 
-  /* add: overflow: scroll */
 }
 
 .create-title {
@@ -199,207 +171,21 @@ label {
   background-color: rgba(128, 128, 128, 0.8);
 }
 
-button {
-  color: black;
-}
-
+/* Footer Section */
 .footer-container {
-  position: fixed;
-  left: 0;
-  bottom: 0;
   width: 100%;
   background-color: #333;
   padding: 0px 0px 30px 0px;
   text-align: center;
-
 }
 
 .footer {
   color: whitesmoke;
-  display: inline-block;
-  width: 400px;
-
-  margin: 0 0 0 -30px;
-  padding: 0 10px 0;
-
-}
-
-
-
-
-@media only screen and (max-width: 375px) {
-
-  .main {
-    padding: 20px 10px;
-    min-height: 68vh;
-    margin: 0 auto;
-  }
-
-  
-    .header {
-      /* background-image: url("./images/18219.jpg"); */
-      height: 100px;
-    }
-
-    .title {
-      background-image: url("./images/18219.jpg");
-      margin: 0;
-    }
-
-
-    .main-container {
-      background-image: url("./images/closetbackground.jpeg");
-      background-size: cover;
-      height: 5h00px;
-      width: auto;
-      max-width: none;
-      margin-left: auto;
-      margin-right: auto;
-      resize: center;
-      margin-left: -137px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .main {
-      min-height: 68vh;
-      margin: 0 auto;
-    }
-
-    .article-list-container {
-      display: inline-flex;
-      justify-content: space-evenly;
-      /* background-color: green; */
-      margin: 0 0 0 -32px;
-      height: 150px;
-      width: 400px;
-      overflow-y: scroll;
-
-    }
-
-    .article-container {
-      background-color: rgba(128, 128, 128, 0.8);
-      padding: 10px;
-      border-radius: 25px;
-      border: 2px solid #3F334D;
-      align-items: center;
-      text-align: center;
-    }
-
-    .article-container-two {
-      background-color: rgba(128, 128, 128, 0.8);
-      padding: 10px;
-      border-radius: 25px;
-      border: 2px solid #3F334D;
-      align-items: center;
-      text-align: center;
-
-    }
-
-    a {
-      text-decoration: none;
-      color: whitesmoke;
-    }
-
-
-
-
-    .home-title {
-      color: #F0F4B5;
-      font-family: cursive;
-      margin: 0 0 0 -35px;
-      font-size: 100px;
-
-    }
-
-
-    .contains-form {
-      background-color: rgba(128, 128, 128, 0.8);
-      border: 2px solid #3F334D;
-      border-radius: 25px;
-      padding: 10px;
-      display: inline-block;
-      margin: 0 0 0 -30px;
-
-    }
-
-    input {
-      background-color: rgba(128, 128, 128, 0.8);
-      border: 2px solid rgba(56, 27, 85, 0.4);
-      border-radius: 25px;
-
-    }
-
-    select {
-      color: whitesmoke;
-      background-color: rgba(56, 27, 85, 0.4);
-      overflow: hidden;
-    }
-
-
-    label {
-      color: whitesmoke;
-
-    }
-
-    .item-button {
-      color: whitesmoke;
-      background-color: rgba(56, 27, 85, 0.4);
-    }
-
-    .create-outfit-component {
-      background-color: rgba(128, 128, 128, 0.8);
-      padding: 10px;
-      border-radius: 25px;
-      border: 2px solid #3F334D;
-      align-items: center;
-      text-align: center;
-      margin: 0 0 0 -30px;
-      width: 330px;
-      height: 280px;
-
-      /* add: overflow: scroll */
-    }
-
-    .create-title {
-      color: whitesmoke
-    }
-
-
-    /* .footer-container {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #333;
-  padding: 14px 0px 30px 0px;
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  
-} */
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #333;
 
-    /* .footer {
-  color: whitesmoke;
-  display: inline-block;
-  width: 400px;
-  
-  margin: 0 0 0 -30px;
-  padding: 0  10px 0;
-  
 }
- */
-  }
-
-
-
-
-  .footer {
-    color: whitesmoke;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin: 0 auto;
-    padding: 10px;
-    background-color: #333;
-
-  }
