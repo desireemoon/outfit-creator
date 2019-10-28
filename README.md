@@ -96,24 +96,24 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | --- | :---: |  :---: | :---: | :---: |
 | Project Design | H | 3hrs| 6hrs | 6hrs |
 | Pseudocode | M | 3hrs| 5hrs | 5hrs |
-| Create DB (models, migration, seed) | H | 3hrs | 8hrs | 8hrs |
-| Create rest of backend including routes | H | 3hrs| 8hrs | 8hrs |
+| Create DB (models, migration, seed) | H | 3hrs | 20hrs | 20hrs |
+| Create rest of backend including routes | H | 3hrs| 20hrs | 20hrs |
 | REACT structure | H | 6hrs| 6hrs | 6hrs |
-| React routing and links | H | 1hrs| 2hr | 2hrs |
+| React routing and links | H | 1hrs| 3hr | 3hrs |
 | Build Main | H | 1hrs| 1hr | 1hr |
 | Build ClothingList | H | 2hrs| 2hrs | 2hrs |
 | Build OutfitList | H | 2hrs| 2hrs | 2hrs |
-| Build CreateClothing | H | 1hrs| 2hrs | 2hrs |
-| Build CreateOutfit | H | 1hrs| 2hrs | 2hrs |
-| Build ClothingContainer | H | 2hrs| 2hrs | 2hrs |
-| Build OutfitContainer | H | 2hrs| 2hrs | 2hrs |
+| Build CreateClothing | H | 1hrs| 5hrs | 5hrs |
+| Build CreateOutfit | H | 1hrs| 7hrs | 7hrs |
+| Build ClothingContainer | H | 2hrs| 5hrs | 5hrs |
+| Build OutfitContainer | H | 2hrs| 5hrs | 5hrs |
 | Build NotFound/Footer | H | 1/2hrs| 1hr | 1hr |
 | Build Header/Navbar | H | 2hrs| 3hrs | 3hrs |
-| React logic and API calls | H | 6hrs| 6hrs | 6hrs |
+| React logic and API calls | H | 6hrs| 12hrs | 12hrs |
 | Plan out designs | M | 2hrs| 2hrs | 2hrs |
-| CSS styling | M | 10hrs| 10hrs | 6hrs |
+| CSS styling | M | 10hrs| 10hrs | 10hrs |
 | PMVP: build and style random outfit page | M | 4hrs| :---: | :---: |
-| Total | H | 34hrs| 66hrs | 66hrs |
+| Total | H | 34hrs| 109hrs | 109hrs |
 
 ## Additional Libraries
 - react-router
