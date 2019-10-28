@@ -18,6 +18,8 @@
 .title {
   background-image: url("./images/18219.jpg");
   color: brown;
+  padding: 5px;
+  margin: 0;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
