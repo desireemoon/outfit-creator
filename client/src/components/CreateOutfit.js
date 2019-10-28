@@ -67,13 +67,6 @@ class CreateOutfit extends Component {
                             <div>
                             <label htmlFor="name">Article Name:</label>
                             </div>
-
-{/* //                 <h1>Create Outfit</h1>
-//                 <div className="create-form">
-//                     <form onChange={this.onChange}>
-//                         <div className="form-containers">
-//                             <label htmlFor="name">Name:</label> */}
-
                             <input type="text" name="name" value={this.state.name} required />
                         </div>
                         <div className="form-containers">

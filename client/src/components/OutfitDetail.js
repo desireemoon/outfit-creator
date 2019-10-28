@@ -31,10 +31,10 @@ function OutfitDetail(props) {
   }
   const showCard = () => {
     if (flipped) {
-      return (<div>This will be the same code for CreateOutfit but w/ props to fill forms</div>)
+      return (<div><h2>Coming soon!</h2></div>)
     } else {
       return (
-        <div className="article-container">
+        <div>
           <h1>{name}</h1>
           <p>Created by: {creator}</p>
           <div className="outfit-details-article-container">
@@ -56,7 +56,7 @@ function OutfitDetail(props) {
     }
   }
   return (
-    <div>
+    <div className="article-container">
       {showCard()}
       <button ><Link className="back" to="/outfits">Back</Link></button>
       <button onClick={() => setFlipped(f => !f)}>Edit Outfit</button>

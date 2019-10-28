@@ -62,7 +62,7 @@ function ItemDetails(props) {
   // flip feature in this component.  change to class component. 
   const showCard = () => {
     if (flipped) {
-      return (<>
+      return (<div>
         <h2>Edit Article</h2>
         <form onSubmit={onClick}>
           <div className="form-containers">
@@ -121,10 +121,10 @@ function ItemDetails(props) {
             <input type="submit" />
           </div>
         </form>
-      </>)
+      </div>)
     } else {
       return (
-        <div className="article-container">
+        <div >
           <h1><a href={url}>{name}</a></h1>
           <img src={imgUrl} alt={name} />
           <p>Created by: {creator}</p>
@@ -139,7 +139,7 @@ function ItemDetails(props) {
   }
 
   return (
-    <div>
+    <div className="article-container">
       {showCard()}
       <button ><Link className="back" to="/clothing">Back</Link></button>
       <button onClick={() => setFlipped(f => !f)}>

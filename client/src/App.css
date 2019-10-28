@@ -14,6 +14,12 @@
   position: sticky;
   background: white;
 }
+.home-link {
+  font-size: 28px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
 
 .title {
   background-image: url("./images/18219.jpg");
@@ -23,17 +29,9 @@
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.home-link {
-  font-size: 28px;
-  text-align: center;
-  text-decoration: none;
-  color: black;
-}
-
 .nav-bar {
   display: flex;
   justify-content: space-evenly;
-  
   background-color: #333;
 }
 
@@ -139,12 +137,21 @@ select {
 
 label {
   color: whitesmoke;
+}
 
+button {
+  background-color: rgba(56, 27, 85, 0.4);
+  border: 2px solid rgba(56, 27, 85, 1);
+  color: whitesmoke;
+  padding: 5px;
+  border-radius: 25px;
+  margin: 5px;
 }
 
 .item-button {
   color: whitesmoke;
   background-color: rgba(56, 27, 85, 0.4);
+  border: 2px solid rgba(56, 27, 85, 1);
 }
 
 .article-container{
@@ -164,7 +171,6 @@ label {
   align-items: center;
   text-align: center;
   width: 330px;
-  height: 280px;
 
 }
 

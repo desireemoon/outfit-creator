@@ -18,6 +18,8 @@ export const sequelize =
             }
     })
 
+
+//  looked at this for help https://khalilstemmler.com/articles/sequelize-tags-junction-pattern/
 export class Article extends Model {}
 Article.init(
     {   name : {

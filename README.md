@@ -13,11 +13,11 @@ Responsive app that catalogues CRUD clothing items and allows you to CRUD outfit
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Oct 21st| Project Approval - Pseudocode and start Structure and backend | Incomplete
-|Oct 22nd| Finish structure and start Logic  | Incomplete
-|Oct 23rd| Finish logic and start CSS | Incomplete
-|Oct 24th| CSS and any post MVP work | Incomplete
-|Oct 25th| Presentation Day - project finished  | Incomplete
+|Oct 21st| Project Approval - Pseudocode and start Structure and backend | Complete
+|Oct 22nd| Finish structure and start Logic  | Complete
+|Oct 23rd| Finish logic and start CSS | Complete
+|Oct 24th| CSS and any post MVP work | Complete
+|Oct 25th| Presentation Day - project finished  | Complete
 
 ## Wireframes
 
@@ -92,26 +92,26 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Project Design | H | 3hrs| 6hrs | :---: |
-| Pseudocode | M | 3hrs| 10hrs | :---: |
-| Create DB (models, migration, seed) | H | 3hrs | :---: | :---: |
-| Create rest of backend including routes | H | 3hrs| :---: | :---: |
-| REACT structure | H | 6hrs| :---: | :---: |
-| React routing and links | H | 1hrs| :---: | :---: |
-| Build Main | H | 1hrs| :---: | :---: |
-| Build ClothingList/OutfitList | H | 2hrs| :---: | :---: |
-| Build OutfitList | H | 2hrs| :---: | :---: |
-| Build CreateClothing | H | 1hrs| :---: | :---: |
-| Build CreateOutfit | H | 1hrs| :---: | :---: |
-| Build ClothingContainer | H | 2hrs| :---: | :---: |
-| Build OutfitContainer | H | 2hrs| :---: | :---: |
-| Build NotFound/Footer | H | 1/2hrs| :---: | :---: |
-| Build Header/Navbar | H | 2hrs| :---: | :---: |
-| React logic and API calls | H | 6hrs| :---: | :---: |
-| Plan out designs | M | 2hrs| :---: | :---: |
-| CSS styling | M | 10hrs| 10hrs | :---: |
+| Project Design | H | 3hrs| 6hrs | 6hrs |
+| Pseudocode | M | 3hrs| 5hrs | 5hrs |
+| Create DB (models, migration, seed) | H | 3hrs | 8hrs | 8hrs |
+| Create rest of backend including routes | H | 3hrs| 8hrs | 8hrs |
+| REACT structure | H | 6hrs| 6hrs | 6hrs |
+| React routing and links | H | 1hrs| 2hr | 2hrs |
+| Build Main | H | 1hrs| 1hr | 1hr |
+| Build ClothingList | H | 2hrs| 2hrs | 2hrs |
+| Build OutfitList | H | 2hrs| 2hrs | 2hrs |
+| Build CreateClothing | H | 1hrs| 2hrs | 2hrs |
+| Build CreateOutfit | H | 1hrs| 2hrs | 2hrs |
+| Build ClothingContainer | H | 2hrs| 2hrs | 2hrs |
+| Build OutfitContainer | H | 2hrs| 2hrs | 2hrs |
+| Build NotFound/Footer | H | 1/2hrs| 1hr | 1hr |
+| Build Header/Navbar | H | 2hrs| 3hrs | 3hrs |
+| React logic and API calls | H | 6hrs| 6hrs | 6hrs |
+| Plan out designs | M | 2hrs| 2hrs | 2hrs |
+| CSS styling | M | 10hrs| 10hrs | 6hrs |
 | PMVP: build and style random outfit page | M | 4hrs| :---: | :---: |
-| Total | H | 34hrs| 35hrs | :---: |
+| Total | H | 34hrs| 66hrs | 66hrs |
 
 ## Additional Libraries
 - react-router
@@ -128,7 +128,29 @@ Time frames are also key in the development cycle.  You have limited time to cod
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
 
 ```
-
+const createOutfit = async (req, res) => {
+    try {
+        const outfit = await Outfit.create(req.body)
+        req.body.articles.forEach( async article => {
+             const newArticle = await Article.findByPk(article.id)
+            if(!newArticle) {
+                return res.status(400)
+            }
+            
+            const oa = {
+                outfit_id: outfit.id,
+                article_id: article.id
+            }
+            console.log(oa)
+        const outfitArticle = await OutfitArticle.create(oa)
+        });
+        return res.status(201).json({
+            outfit
+        })
+    } catch(error) {
+        return res.status(500).send(error)
+    }
+}
 ```
 
 ## Issues and Resolutions
