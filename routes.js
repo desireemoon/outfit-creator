@@ -122,11 +122,11 @@ const createArticle = async (req, res) => {
             return res.status(500).send(error.message)
         }
     }
-    
+
+    // looked at this for help https://medium.com/@tonyangelo9707/many-to-many-associations-using-sequelize-941f0b6ac102
 const createOutfit = async (req, res) => {
     try {
         const outfit = await Outfit.create(req.body)
-        // const articles = await Article.findAll()
         req.body.articles.forEach( async article => {
              const newArticle = await Article.findByPk(article.id)
             if(!newArticle) {

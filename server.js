@@ -14,8 +14,9 @@ app.get("/test", (req,res) => {
     return res.header(200).send({greetings: "we're cooking with GAS!!! o(*￣▽￣*)ブ"})
 })
 
-app.use(express.static(path.join(__dirname, 'client/build')));
-app.use('/static',express.static(path.join(__dirname, 'client/build/static')));
+app.use(express.static(path.join(__dirname, '/client/build')));
+app.use('/static',express.static(path.join(__dirname, '/client/build/static')));
+app.use('/images', express.static(path.join(__dirname, '/client/build/images/')))
 
 app.get('*', (req,res) =>{
     res.sendFile(path.join(__dirname,'/client/build/index.html'));
