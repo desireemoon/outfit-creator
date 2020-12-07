@@ -1,5 +1,3 @@
-deploying!
-
 # outfit-creator
 outfit-creator
 
